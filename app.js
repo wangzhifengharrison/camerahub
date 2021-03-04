@@ -7,6 +7,8 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const cameraRouter = require('./routes/camera');
 const officeRouter = require('./routes/office');
+const ruleRouter = require('./routes/rule');
+const userRouter = require('./routes/user');
 const app = express();
 
 // view engine setup
@@ -22,6 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/camera', cameraRouter);
 app.use('/office', officeRouter);
+app.use('/rule', ruleRouter);
+app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
