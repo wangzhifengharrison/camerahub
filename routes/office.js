@@ -34,4 +34,20 @@ router.post('/add', function (request, response) {
     }
 });
 
+/* DELETE OFFICE */
+router.get('/del/:officeID', function (request, response, next) {
+    if (request.session.loggedin) {
+        let officeID = request.params.officeID;
+        if (officeID) {
+            let query = "DELETE FROM `office` WHERE officeID = '" + officeID + "'";
+            db.query(query, (err, result) => {
+                //response.send(err.toString());
+                response.redirect('/office');
+            });
+        }
+    } else {
+        response.redirect('/');
+    }
+});
+
 module.exports = router;
