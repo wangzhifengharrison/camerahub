@@ -14,6 +14,7 @@
     <!-- BEGIN PAGE LEVEL CUSTOM STYLES -->
     <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/forms/theme-checkbox-radio.css">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap-select/bootstrap-select.min.css">
     <link href="assets/css/tables/table-basic.css" rel="stylesheet" type="text/css"/>
     <!-- END PAGE LEVEL CUSTOM STYLES -->
 </head>
@@ -151,6 +152,7 @@
                                             <th>Camera ID</th>
                                             <th>Camera SN</th>
                                             <th>Camera RTSP Url</th>
+                                            <th>Installed Office</th>
                                             <th class="text-center">Status</th>
                                             <th></th>
                                         </tr>
@@ -161,6 +163,7 @@
                                                 <td><%= camera.cameraID %></td>
                                                 <td><%= camera.cameraSN %></td>
                                                 <td><%= camera.cameraURL %></td>
+                                                <td><%= camera.officeName %></td>
                                                 <td class="text-center"><span class="text-success">Activated</span></td>
                                                 <td class="text-center">
                                                     <ul class="table-controls">
@@ -234,6 +237,18 @@
                                                placeholder="" required>
                                     </div>
                                 </div>
+                                <div class="form-group row mb-4">
+                                    <label for="cameraFeed" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Office
+                                        Installed</label>
+                                    <div class="col-xl-10 col-lg-9 col-sm-10">
+                                        <select class="selectpicker" name="officeID">
+                                            <% offices.forEach((office, index) => { %>
+                                                <option value="<%= office.officeID %>"><%= office.officeName %></option>
+                                            <% }) %>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div class="form-group row">
                                     <div class="col-sm-10">
                                         <button type="submit" class="btn btn-primary mt-3">Add new Camera</button>
@@ -270,6 +285,7 @@
 
 <!-- BEGIN PAGE LEVEL CUSTOM SCRIPTS -->
 <script src="assets/js/scrollspyNav.js"></script>
+<script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
 <script>
     checkall('todoAll', 'todochkbox');
     $('[data-toggle="tooltip"]').tooltip()

@@ -4,12 +4,17 @@ const db = require('../modules/db');
 
 router.get('/', function (req, res, next) {
     if (req.session.loggedin) {
-        db.query('SELECT cameraID, cameraSN, cameraURL, cameraStatus FROM camera WHERE userID = ' + req.session.userID, function (error, results, fields) {
+        db.query('SELECT * FROM camera JOIN office ON camera.officeID = office.officeID WHERE camera.userID = ' + req.session.userID, function (error, results, fields) {
             if (error) {
                 res.redirect('/');
             }
-            let username = req.session.username;
-            res.render('camera', {userName: username, cameras: results});
+            db.query('SELECT * FROM office WHERE userID = ' + req.session.userID, function (error, officeResults, fields) {
+                if (error) {
+                    res.redirect('/');
+                }
+                let username = req.session.username;
+                res.render('camera', {userName: username, offices: officeResults, cameras: results});
+            });
         });
     } else {
         res.redirect('/user/login');
@@ -22,9 +27,10 @@ router.post('/add', function (request, response) {
     if (request.session.loggedin) {
         let cameraSN = request.body.cameraSN;
         let cameraURL = request.body.cameraFeed;
+        let officeID = request.body.officeID;
         if (cameraSN) {
-            let query = "INSERT INTO `camera` (cameraSN, cameraURL, cameraStatus, userID) VALUES ('" +
-                cameraSN + "', '" + cameraURL + "', '1', '" + request.session.userID + "')";
+            let query = "INSERT INTO `camera` (cameraSN, officeID, cameraURL, cameraStatus, userID) VALUES ('" +
+                cameraSN + "', '" + officeID + "', '" + cameraURL + "', '1', '" + request.session.userID + "')";
             db.query(query, (err, result) => {
                 response.redirect('/camera');
             });
