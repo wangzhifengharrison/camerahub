@@ -1,5 +1,6 @@
 const createError = require('http-errors');
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -14,6 +15,22 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(cookieParser('SHOW ME THE CAMERA'));
+
+//Session Configuration
+//Change cookie . secure: false, to secure: true on HTTPS server
+const MemoryStore = session.MemoryStore;
+app.use(session({
+    secret: 'SHOW ME THE CAMERA',
+    resave: true,
+    saveUninitialized: true,
+    store: new MemoryStore(),
+    cookie: {
+        secure: false,
+        maxAge: 24 * 60 * 60 * 1000
+    }
+}))
 
 app.use(logger('dev'));
 app.use(express.json());

@@ -27,7 +27,7 @@
                     <h1 class="">Sign In</h1>
                     <p class="">Log in to your account to continue.</p>
 
-                    <form class="text-left">
+                    <form class="text-left" action="/user/login" method="POST">
                         <div class="form">
 
                             <div id="username-field" class="field-wrapper input">
@@ -39,7 +39,7 @@
                                     <circle cx="12" cy="7" r="4"></circle>
                                 </svg>
                                 <input id="username" name="username" type="text" class="form-control"
-                                       placeholder="Your Email Address">
+                                       placeholder="Your Username">
                             </div>
 
                             <div id="password-field" class="field-wrapper input mb-2">
@@ -62,6 +62,19 @@
                                     <circle cx="12" cy="12" r="3"></circle>
                                 </svg>
                             </div>
+                            <% if(ErrorInfo && ErrorInfo !== ''){ %>
+                                <div class="alert alert-danger mb-4" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="feather feather-x close" data-dismiss="alert">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                    <strong>Error!</strong> <%= ErrorInfo %></div>
+                            <% } %>
                             <div class="d-sm-flex justify-content-between">
                                 <div class="field-wrapper">
                                     <button type="submit" class="btn btn-primary" value="">Log In</button>
