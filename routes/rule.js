@@ -6,7 +6,7 @@ router.get('/', function (req, res, next) {
     res.render('rule');
 });
 
-/* POST Office Insertion . */
+/* POST Rule Insertion . */
 router.post('/add', function (request, response) {
     if (request.session.loggedin) {
         let officeName = request.body.officeName;
@@ -24,5 +24,20 @@ router.post('/add', function (request, response) {
     }
 });
 
+/* DELETE RULE */
+router.get('/del/:ruleID', function (request, response, next) {
+    if (request.session.loggedin) {
+        let ruleID = request.params.ruleID;
+        if (ruleID) {
+            let query = "DELETE FROM `rule` WHERE ruleID = '" + ruleID + "'";
+            db.query(query, (err, result) => {
+                //response.send(err.toString());
+                response.redirect('/rule');
+            });
+        }
+    } else {
+        response.redirect('/');
+    }
+});
 
 module.exports = router;
