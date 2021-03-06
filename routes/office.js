@@ -12,41 +12,41 @@ router.get('/', function (req, res, next) {
             res.render('office', {userName: username, offices: results});
         });
     } else {
-        res.redirect('/');
+        res.redirect('/user/login');
     }
 });
 
 /* POST Office Insertion . */
-router.post('/add', function (request, response) {
-    if (request.session.loggedin) {
-        let officeName = request.body.officeName;
+router.post('/add', function (req, res) {
+    if (req.session.loggedin) {
+        let officeName = req.body.officeName;
         if (officeName) {
             let query = "INSERT INTO `office` (officeName, officeStatus, userID) VALUES ('" +
                 officeName + "', '1', '" + request.session.userID + "')";
             db.query(query, (err, result) => {
-                response.redirect('/office');
+                res.redirect('/office');
             });
         } else {
-            response.redirect('/office');
+            res.redirect('/');
         }
     } else {
-        response.redirect('/');
+        res.redirect('/user/login');
     }
 });
 
 /* DELETE OFFICE */
-router.get('/del/:officeID', function (request, response, next) {
-    if (request.session.loggedin) {
-        let officeID = request.params.officeID;
+router.get('/del/:officeID', function (req, res, next) {
+    if (req.session.loggedin) {
+        let officeID = req.params.officeID;
         if (officeID) {
             let query = "DELETE FROM `office` WHERE officeID = '" + officeID + "'";
             db.query(query, (err, result) => {
                 //response.send(err.toString());
-                response.redirect('/office');
+                res.redirect('/office');
             });
         }
     } else {
-        response.redirect('/');
+        res.redirect('/user/login');
     }
 });
 

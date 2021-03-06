@@ -6,27 +6,27 @@ router.get('/login', function (req, res, next) {
     res.render('login', {ErrorInfo: ''});
 });
 
-router.post('/login', function (request, response) {
-    let username = request.body.username;
-    let password = request.body.password;
+router.post('/login', function (req, res) {
+    let username = req.body.username;
+    let password = req.body.password;
     if (username && password) {
         //todo: Hash the password
         db.query('SELECT * FROM user WHERE userAccount = ? AND userPassword = ?', [username, password], function (error, results, fields) {
             try {
                 if (results.length > 0) {
-                    request.session.loggedin = true;
-                    request.session.username = results[0].userName;
-                    request.session.userID = results[0].userID;
-                    response.redirect('/');
+                    req.session.loggedin = true;
+                    req.session.username = results[0].userName;
+                    req.session.userID = results[0].userID;
+                    res.redirect('/');
                 } else {
-                    response.render('login', {ErrorInfo: 'Username and Password not match!'});
+                    res.render('login', {ErrorInfo: 'Username and Password not match!'});
                 }
             } catch (e) {
-                response.redirect('/user/login');
+                res.render('login', {ErrorInfo: 'Internal Service Error!'});
             }
         });
     } else {
-        response.render('index', {ErrorInfo: 'Please enter Username and Password!'});
+        res.render('login', {ErrorInfo: 'Please enter Username and Password!'});
     }
 });
 
