@@ -14,6 +14,7 @@
     <!-- BEGIN PAGE LEVEL CUSTOM STYLES -->
     <link href="../assets/css/scrollspyNav.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/forms/theme-checkbox-radio.css">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap-select/bootstrap-select.min.css">
     <link href="../assets/css/tables/table-basic.css" rel="stylesheet" type="text/css"/>
     <!-- END PAGE LEVEL CUSTOM STYLES -->
 </head>
@@ -206,37 +207,175 @@
                         </div>
                         <div class="widget-content widget-content-area">
                             <form method="post" action="/rule/add">
-                                <div class="form-group row mb-4">
-                                    <label for="cameraSN" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Serial
-                                        Number</label>
-                                    <div class="col-xl-10 col-lg-9 col-sm-10">
-                                        <input type="text" class="form-control" id="cameraSN" name="cameraSN"
-                                               placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-4">
-                                    <label for="cameraFeed" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Feed
-                                        URL</label>
-                                    <div class="col-xl-10 col-lg-9 col-sm-10">
-                                        <input type="text" class="form-control" id="cameraFeed" name="cameraFeed"
-                                               placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-4">
-                                    <label for="cameraFeed" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Office
-                                        Installed</label>
-                                    <div class="col-xl-10 col-lg-9 col-sm-10">
-                                        <select class="selectpicker" name="officeID">
+                                <div class="form-group row mb-10">
+                                    <label for="cameraFeed" class="col-xl-2 col-sm-3 col-sm-2 col-md-3 col-form-label">Target
+                                        Camera</label>
+                                    <div class="col-xl-10 col-lg-9 col-sm-10 col-md-9">
+                                        <select class="selectpicker" name="officeID" data-width="100%">
                                             <% cameras.forEach((camera, index) => { %>
-                                                <option value="<%= camera.cameraID %>"><%= camera.cameraSN %></option>
+                                                <% if (camera.officeID !== null) { %>
+                                                    <option value="<%= camera.cameraID %>"><%= camera.officeName %>
+                                                        - <%= camera.cameraSN %></option>
+                                                <% } %>
                                             <% }) %>
                                         </select>
                                     </div>
                                 </div>
+                                <div class="form-group row mb-10">
+                                    <label for="cameraFeed" class="col-xl-2 col-sm-3 col-sm-2 col-md-3 col-form-label">Policy
+                                        Type</label>
+                                    <div class="col-xl-10 col-lg-9 col-sm-10 col-md-9">
+                                        <select class="selectpicker" id="ruleType" name="ruleType" data-width="100%">
+                                            <option value="1">Object Detection</option>
+                                            <option value="2">Motion Detection</option>
+                                            <option value="3">Intrusion Detection</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="objectForm">
+                                    <p><code>Object Detection</code> With object detection, you can localize and track
+                                        in real time the most
+                                        prominent objects in a camera. For example, Masks</p>
+                                    <div class="row mt-5">
+                                        <div class="col-md-4 col-4">
+                                            <div class="n-chk">
+                                                <label class="new-control new-checkbox new-checkbox-text checkbox-outline-success">
+                                                    <input type="checkbox" class="new-control-input" name="isMask">
+                                                    <span class="new-control-indicator"></span><span
+                                                            class="new-chk-content">Mask Detection</span>
+                                                </label>
+                                            </div>
+                                            <div class="n-chk">
+                                                <label class="new-control new-checkbox new-checkbox-text checkbox-outline-success">
+                                                    <input type="checkbox" class="new-control-input" name="isHat">
+                                                    <span class="new-control-indicator"></span><span
+                                                            class="new-chk-content">Hat Detection</span>
+                                                </label>
+                                            </div>
+                                            <div class="n-chk">
+                                                <label class="new-control new-checkbox new-checkbox-text checkbox-outline-success">
+                                                    <input type="checkbox" class="new-control-input" name="isVest">
+                                                    <span class="new-control-indicator"></span><span
+                                                            class="new-chk-content">Vest Detection</span>
+                                                </label>
+                                            </div>
+                                            <div class="n-chk">
+                                                <label class="new-control new-checkbox new-checkbox-text checkbox-outline-success">
+                                                    <input type="checkbox" class="new-control-input" name="isShoes">
+                                                    <span class="new-control-indicator"></span><span
+                                                            class="new-chk-content">Shoes Detection</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-4">
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio radio-primary">
+                                                    <input type="radio" class="new-control-input" name="maskLogic"
+                                                           checked>
+                                                    <span class="new-control-indicator"></span>Wearing Medical Mask
+                                                </label>
+                                            </div>
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio radio-primary">
+                                                    <input type="radio" class="new-control-input" name="hatLogic"
+                                                           checked>
+                                                    <span class="new-control-indicator"></span>Wearing Hat
+                                                </label>
+                                            </div>
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio radio-primary">
+                                                    <input type="radio" class="new-control-input" name="vestLogic"
+                                                           checked>
+                                                    <span class="new-control-indicator"></span>Wearing Vest
+                                                </label>
+                                            </div>
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio radio-primary">
+                                                    <input type="radio" class="new-control-input" name="shoesLogic"
+                                                           checked>
+                                                    <span class="new-control-indicator"></span>Wearing Shoes
+                                                </label>
+                                            </div>
+                                        </div>
 
+                                        <div class="col-md-4 col-4">
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio radio-secondary">
+                                                    <input type="radio" class="new-control-input" name="maskLogic">
+                                                    <span class="new-control-indicator"></span>Not Wearing Medical Mask
+                                                </label>
+                                            </div>
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio radio-secondary">
+                                                    <input type="radio" class="new-control-input" name="hatLogic">
+                                                    <span class="new-control-indicator"></span>Not Wearing Hat
+                                                </label>
+                                            </div>
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio radio-secondary">
+                                                    <input type="radio" class="new-control-input" name="vestLogic">
+                                                    <span class="new-control-indicator"></span>Not Wearing Vest
+                                                </label>
+                                            </div>
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio radio-secondary">
+                                                    <input type="radio" class="new-control-input" name="shoesLogic">
+                                                    <span class="new-control-indicator"></span>Not Wearing Shoes
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="motionForm">
+                                    <p><code>Motion Detection</code> With Motion detection, you can detect certain
+                                        motions in a camera, such as failing or running. </p>
+                                    <div class="row mt-5">
+                                        <div class="col-md-6 col-6">
+                                            <div class="n-chk">
+                                                <label class="new-control new-checkbox new-checkbox-text checkbox-outline-success">
+                                                    <input type="checkbox" class="new-control-input" name="isFailing">
+                                                    <span class="new-control-indicator"></span><span
+                                                            class="new-chk-content">When someone is Failing</span>
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6 col-6">
+                                            <div class="n-chk">
+                                                <label class="new-control new-checkbox new-checkbox-text checkbox-outline-success">
+                                                    <input type="checkbox" class="new-control-input" name="isRunning">
+                                                    <span class="new-control-indicator"></span><span
+                                                            class="new-chk-content">When someone is Running</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="intrusionForm">
+                                    <p><code>Intrusion Detection</code> With Intrusion detection, you can detect
+                                        intrusion in certain area in a camera footage, useful in storage room or
+                                        restricted area. </p>
+                                    <div class="row mt-5">
+                                        <div class="col-md-12 col-lg-10 col-xl-8">
+                                            <canvas id="cameraCanvas" width="640" height="480"
+                                                    style="border:1px solid #d3d3d3;">
+                                                Your browser does not support the HTML5 canvas tag.
+                                            </canvas>
+                                        </div>
+                                        <div class="col-md-12 col-lg-2 col-xl-4">
+                                            <p>Click the image to get a polygon of detection area, click Red Dot again
+                                                to finish polygon</p>
+                                            <button class="btn btn-block btn-dark mb-2" type="button"
+                                                    onclick="clearCanvas()">Clear Selection
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group row">
                                     <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-primary mt-3">Add new Camera</button>
+                                        <button type="submit" class="btn btn-primary mt-5">Add new Policy (Rule)
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -253,7 +392,7 @@
 <!-- END MAIN CONTAINER -->
 
 <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-<script src="../assets/js/libs/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="../bootstrap/js/popper.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <script src="../plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
@@ -270,9 +409,222 @@
 
 <!-- BEGIN PAGE LEVEL CUSTOM SCRIPTS -->
 <script src="../assets/js/scrollspyNav.js"></script>
+<script src="../plugins/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.3.1/fabric.min.js"
+        integrity="sha512-ACqMrfAtm537AWzgx/xQ57JnFxXeq8RylQMGg4y/e6M2ew4Z8NycE8aId/Bt2ZE+w1gNsox3MgwxKl7SGMRdtA=="
+        crossorigin="anonymous"></script>
+
 <script>
-    checkall('todoAll', 'todochkbox');
-    $('[data-toggle="tooltip"]').tooltip()
+    $('#objectForm').show();
+    $('#motionForm').hide();
+    $('#intrusionForm').hide();
+    $('[data-toggle="tooltip"]').tooltip();
+    $('#ruleType').on('change', function () {
+        switch (this.value) {
+            case '1':
+                $('#objectForm').show();
+                $('#motionForm').hide();
+                $('#intrusionForm').hide();
+                break;
+            case '2':
+                $('#objectForm').hide();
+                $('#motionForm').show();
+                $('#intrusionForm').hide();
+                break;
+            case '3':
+                $('#objectForm').hide();
+                $('#motionForm').hide();
+                $('#intrusionForm').show();
+                break;
+        }
+    });
+
+    $(window).on('load', function () {
+        prototypefabric.initCanvas();
+        $('#create-polygon').click(function () {
+            prototypefabric.polygon.drawPolygon();
+        });
+    });
+
+    var min = 99;
+    var max = 999999;
+    var polygonMode = true;
+    var pointArray = [];
+    var lineArray = [];
+    var activeLine;
+    var activeShape = false;
+    var polygon;
+    var canvas;
+
+    var prototypefabric = new function () {
+        this.initCanvas = function () {
+            canvas = window._canvas = new fabric.Canvas('cameraCanvas');
+            //canvas.setWidth($(window).width());
+            //canvas.setHeight($(window).height()-$('#nav-bar').height());
+            //canvas.selection = false;
+            let bgImage = new Image();
+            bgImage.src = "../assets/img/camera.jpg";
+            canvas.setBackgroundColor({source: bgImage, repeat: 'repeat'})
+            canvas.on('mouse:down', function (options) {
+                if (options.target && options.target.id == pointArray[0].id) {
+                    prototypefabric.polygon.generatePolygon(pointArray);
+                }
+                if (polygonMode) {
+                    prototypefabric.polygon.addPoint(options);
+                }
+            });
+            canvas.on('mouse:up', function (options) {
+
+            });
+            canvas.on('mouse:move', function (options) {
+                if (activeLine && activeLine.class == "line") {
+                    var pointer = canvas.getPointer(options.e);
+                    activeLine.set({x2: pointer.x, y2: pointer.y});
+
+                    var points = activeShape.get("points");
+                    points[pointArray.length] = {
+                        x: pointer.x,
+                        y: pointer.y
+                    }
+                    activeShape.set({
+                        points: points
+                    });
+                    canvas.renderAll();
+                }
+                canvas.renderAll();
+            });
+        };
+    };
+
+    prototypefabric.polygon = {
+        drawPolygon: function () {
+            polygonMode = true;
+            pointArray = [];
+            lineArray = [];
+            activeLine;
+        },
+        addPoint: function (options) {
+            var random = Math.floor(Math.random() * (max - min + 1)) + min;
+            var id = new Date().getTime() + random;
+            var circle = new fabric.Circle({
+                radius: 5,
+                fill: '#ffffff',
+                stroke: '#333333',
+                strokeWidth: 0.5,
+                left: (options.e.layerX / canvas.getZoom()),
+                top: (options.e.layerY / canvas.getZoom()),
+                selectable: false,
+                hasBorders: false,
+                hasControls: false,
+                originX: 'center',
+                originY: 'center',
+                id: id,
+                objectCaching: false
+            });
+            if (pointArray.length == 0) {
+                circle.set({
+                    fill: 'red'
+                })
+            }
+            var points = [(options.e.layerX / canvas.getZoom()), (options.e.layerY / canvas.getZoom()), (options.e.layerX / canvas.getZoom()), (options.e.layerY / canvas.getZoom())];
+            line = new fabric.Line(points, {
+                strokeWidth: 2,
+                fill: '#999999',
+                stroke: '#999999',
+                class: 'line',
+                originX: 'center',
+                originY: 'center',
+                selectable: false,
+                hasBorders: false,
+                hasControls: false,
+                evented: false,
+                objectCaching: false
+            });
+            if (activeShape) {
+                var pos = canvas.getPointer(options.e);
+                var points = activeShape.get("points");
+                points.push({
+                    x: pos.x,
+                    y: pos.y
+                });
+                var polygon = new fabric.Polygon(points, {
+                    stroke: '#333333',
+                    strokeWidth: 1,
+                    fill: '#cccccc',
+                    opacity: 0.3,
+                    selectable: false,
+                    hasBorders: false,
+                    hasControls: false,
+                    evented: false,
+                    objectCaching: false
+                });
+                canvas.remove(activeShape);
+                canvas.add(polygon);
+                activeShape = polygon;
+                canvas.renderAll();
+            } else {
+                var polyPoint = [{x: (options.e.layerX / canvas.getZoom()), y: (options.e.layerY / canvas.getZoom())}];
+                var polygon = new fabric.Polygon(polyPoint, {
+                    stroke: '#333333',
+                    strokeWidth: 1,
+                    fill: '#cccccc',
+                    opacity: 0.3,
+                    selectable: false,
+                    hasBorders: false,
+                    hasControls: false,
+                    evented: false,
+                    objectCaching: false
+                });
+                activeShape = polygon;
+                canvas.add(polygon);
+            }
+            activeLine = line;
+
+            pointArray.push(circle);
+            lineArray.push(line);
+
+            canvas.add(line);
+            canvas.add(circle);
+            canvas.selection = false;
+        },
+        generatePolygon: function (pointArray) {
+            var points = [];
+            $.each(pointArray, function (index, point) {
+                points.push({
+                    x: point.left,
+                    y: point.top
+                });
+                canvas.remove(point);
+            });
+            $.each(lineArray, function (index, line) {
+                canvas.remove(line);
+            });
+            canvas.remove(activeShape).remove(activeLine);
+            polygon = new fabric.Polygon(points, {
+                stroke: '#333333',
+                strokeWidth: 0.5,
+                fill: 'red',
+                opacity: 0.4,
+                hasBorders: false,
+                hasControls: false
+            });
+            canvas.add(polygon);
+
+            activeLine = null;
+            activeShape = null;
+            polygonMode = false;
+            canvas.selection = true;
+        }
+    };
+
+    function clearCanvas() {
+        polygonMode = true;
+        pointArray = [];
+        lineArray = [];
+        activeShape = false;
+        canvas.remove(polygon);
+    }
+
 </script>
 <!-- END PAGE LEVEL CUSTOM SCRIPTS -->
 </body>
