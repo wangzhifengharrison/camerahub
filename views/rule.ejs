@@ -135,7 +135,7 @@
                                         <thead>
                                         <tr>
                                             <th>Rule ID</th>
-                                            <th>Rule Name</th>
+                                            <!--<th>Rule Name</th>-->
                                             <th>Rule Type</th>
                                             <th>Rule Description</th>
                                             <th>Target Camera</th>
@@ -147,9 +147,31 @@
                                         <% rules.forEach((rule, index) => { %>
                                             <tr>
                                                 <td><%= rule.ruleID %></td>
-                                                <td><%= rule.ruleName %></td>
-                                                <td><%= rule.ruleType %></td>
-                                                <td><%= rule.ruleValue %></td>
+                                                <td><%= rule.ruleType == '1' ? 'Object Detection' : rule.ruleType == '2' ? 'Motion Detection' : 'Intrusion Detection' %></td>
+                                                <% if (rule.ruleType == '1') { %>
+                                                    <td>
+                                                        <% if (rule.ruleValue.substring(0, 1) === '1') { %>
+                                                            Check
+                                                            Mask: <%= rule.ruleValue.substring(1, 2) === '1' ? ' (Wearing), ' : ' (Not Wearing), ' %>
+                                                        <% } %>
+                                                        <% if (rule.ruleValue.substring(2, 3) === '1') { %>
+                                                            Check
+                                                            Hat: <%= rule.ruleValue.substring(3, 4) === '1' ? ' (Wearing), ' : ' (Not Wearing), ' %>
+                                                        <% } %>
+                                                        <% if (rule.ruleValue.substring(4, 5) === '1') { %>
+                                                            Check
+                                                            Vest: <%= rule.ruleValue.substring(5, 6) === '1' ? ' (Wearing), ' : ' (Not Wearing), ' %>
+                                                        <% } %>
+                                                        <% if (rule.ruleValue.substring(6, 7) === '1') { %>
+                                                            Check
+                                                            Shoes: <%= rule.ruleValue.substring(7, 8) === '1' ? ' (Wearing), ' : ' (Not Wearing), ' %>
+                                                        <% } %>
+                                                    </td>
+                                                <% } else if (rule.ruleType == '2') { %>
+                                                    <td><%= rule.ruleValue.substring(0, 1) === '1' ? 'Check Failing, ' : '' %><%= rule.ruleValue.substring(1, 2) === '1' ? 'Check Running' : '' %></td>
+                                                <% } else { %>
+                                                    <td><%= rule.ruleValue %></td>
+                                                <% } %>
                                                 <td><%= rule.cameraSN %></td>
                                                 <td class="text-center">
                                                     <ul class="table-controls">
@@ -211,7 +233,7 @@
                                     <label for="cameraFeed" class="col-xl-2 col-sm-3 col-sm-2 col-md-3 col-form-label">Target
                                         Camera</label>
                                     <div class="col-xl-10 col-lg-9 col-sm-10 col-md-9">
-                                        <select class="selectpicker" name="officeID" data-width="100%">
+                                        <select class="selectpicker" name="cameraID" data-width="100%">
                                             <% cameras.forEach((camera, index) => { %>
                                                 <% if (camera.officeID !== null) { %>
                                                     <option value="<%= camera.cameraID %>"><%= camera.officeName %>
@@ -271,6 +293,7 @@
                                             <div class="n-chk">
                                                 <label class="new-control new-radio radio-primary">
                                                     <input type="radio" class="new-control-input" name="maskLogic"
+                                                           value="1"
                                                            checked>
                                                     <span class="new-control-indicator"></span>Wearing Medical Mask
                                                 </label>
@@ -278,6 +301,7 @@
                                             <div class="n-chk">
                                                 <label class="new-control new-radio radio-primary">
                                                     <input type="radio" class="new-control-input" name="hatLogic"
+                                                           value="1"
                                                            checked>
                                                     <span class="new-control-indicator"></span>Wearing Hat
                                                 </label>
@@ -285,6 +309,7 @@
                                             <div class="n-chk">
                                                 <label class="new-control new-radio radio-primary">
                                                     <input type="radio" class="new-control-input" name="vestLogic"
+                                                           value="1"
                                                            checked>
                                                     <span class="new-control-indicator"></span>Wearing Vest
                                                 </label>
@@ -292,6 +317,7 @@
                                             <div class="n-chk">
                                                 <label class="new-control new-radio radio-primary">
                                                     <input type="radio" class="new-control-input" name="shoesLogic"
+                                                           value="1"
                                                            checked>
                                                     <span class="new-control-indicator"></span>Wearing Shoes
                                                 </label>
@@ -301,25 +327,29 @@
                                         <div class="col-md-4 col-4">
                                             <div class="n-chk">
                                                 <label class="new-control new-radio radio-secondary">
-                                                    <input type="radio" class="new-control-input" name="maskLogic">
+                                                    <input type="radio" class="new-control-input" name="maskLogic"
+                                                           value="0">
                                                     <span class="new-control-indicator"></span>Not Wearing Medical Mask
                                                 </label>
                                             </div>
                                             <div class="n-chk">
                                                 <label class="new-control new-radio radio-secondary">
-                                                    <input type="radio" class="new-control-input" name="hatLogic">
+                                                    <input type="radio" class="new-control-input" name="hatLogic"
+                                                           value="0">
                                                     <span class="new-control-indicator"></span>Not Wearing Hat
                                                 </label>
                                             </div>
                                             <div class="n-chk">
                                                 <label class="new-control new-radio radio-secondary">
-                                                    <input type="radio" class="new-control-input" name="vestLogic">
+                                                    <input type="radio" class="new-control-input" name="vestLogic"
+                                                           value="0">
                                                     <span class="new-control-indicator"></span>Not Wearing Vest
                                                 </label>
                                             </div>
                                             <div class="n-chk">
                                                 <label class="new-control new-radio radio-secondary">
-                                                    <input type="radio" class="new-control-input" name="shoesLogic">
+                                                    <input type="radio" class="new-control-input" name="shoesLogic"
+                                                           value="0">
                                                     <span class="new-control-indicator"></span>Not Wearing Shoes
                                                 </label>
                                             </div>
@@ -370,8 +400,9 @@
                                             <button class="btn btn-block btn-dark mb-2" type="button"
                                                     onclick="clearCanvas()">Clear Selection
                                             </button>
-                                            <textarea class="form-control" id="polygonPoints" rows="3"
-                                                      disabled></textarea>
+                                            <textarea class="form-control" id="polygonPoints" name="polygonPoints"
+                                                      rows="4"
+                                                      readonly></textarea>
                                         </div>
                                     </div>
                                 </div>

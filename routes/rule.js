@@ -24,16 +24,38 @@ router.get('/', function (req, res, next) {
 /* POST Rule Insertion . */
 router.post('/add', function (req, res) {
     if (req.session.loggedin) {
-        let officeName = req.body.officeName;
-        if (officeName) {
-            let query = "INSERT INTO `office` (officeName, officeStatus, userID) VALUES ('" +
-                officeName + "', '1', '" + request.session.userID + "')";
-            db.query(query, (err, result) => {
-                res.redirect('/rule');
-            });
-        } else {
-            res.redirect('/rule');
+        let cameraID = req.body.cameraID;
+        let ruleType = req.body.ruleType;
+        let ruleValue = '';
+        switch (ruleType)
+        {
+            case '1':
+                //OBJECT DETECTION
+                ruleValue += req.body.isMask ? req.body.maskLogic === '1' ? '11' : '10' : '00';
+                ruleValue += req.body.isHat ? req.body.hatLogic === '1' ? '11' : '10' : '00';
+                ruleValue += req.body.isVest ? req.body.vestLogic === '1' ? '11' : '10' : '00';
+                ruleValue += req.body.isShoes ? req.body.shoesLogic === '1' ? '11' : '10' : '00';
+                //The system will report as a string like '11100010'
+                break;
+            case '2':
+                //MOTION
+                ruleValue += req.body.isFailing ? 1 : 0;
+                ruleValue += req.body.isRunning ? 1 : 0;
+                break;
+            case '3':
+                //AREA
+                ruleValue += req.body.polygonPoints;
+                break;
         }
+        let query = "INSERT INTO `rule` (ruleType, ruleValue, cameraID, userID) VALUES ('" +
+            ruleType + "', '" + ruleValue + "', '" + cameraID + "', '" + req.session.userID + "')";
+        db.query(query, (err, result) => {
+            if(err)
+            {
+                console.log(err.message);
+            }
+            res.redirect('/rule');
+        });
     } else {
         res.redirect('/user/login');
     }

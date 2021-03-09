@@ -22,7 +22,7 @@ router.post('/add', function (req, res) {
         let officeName = req.body.officeName;
         if (officeName) {
             let query = "INSERT INTO `office` (officeName, officeStatus, userID) VALUES ('" +
-                officeName + "', '1', '" + request.session.userID + "')";
+                officeName + "', '1', '" + req.session.userID + "')";
             db.query(query, (err, result) => {
                 res.redirect('/office');
             });
