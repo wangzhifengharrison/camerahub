@@ -27,8 +27,7 @@ router.post('/add', function (req, res) {
         let cameraID = req.body.cameraID;
         let ruleType = req.body.ruleType;
         let ruleValue = '';
-        switch (ruleType)
-        {
+        switch (ruleType) {
             case '1':
                 //OBJECT DETECTION
                 ruleValue += req.body.isMask ? req.body.maskLogic === '1' ? '11' : '10' : '00';
@@ -50,8 +49,7 @@ router.post('/add', function (req, res) {
         let query = "INSERT INTO `rule` (ruleType, ruleValue, cameraID, userID) VALUES ('" +
             ruleType + "', '" + ruleValue + "', '" + cameraID + "', '" + req.session.userID + "')";
         db.query(query, (err, result) => {
-            if(err)
-            {
+            if (err) {
                 console.log(err.message);
             }
             res.redirect('/rule');
