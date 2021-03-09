@@ -364,11 +364,14 @@
                                             </canvas>
                                         </div>
                                         <div class="col-md-12 col-lg-2 col-xl-4">
-                                            <p>Click the image to get a polygon of detection area, click Red Dot again
+                                            <p>Click the image to start drawing a polygon of detection area, click Red
+                                                Dot again
                                                 to finish polygon</p>
                                             <button class="btn btn-block btn-dark mb-2" type="button"
                                                     onclick="clearCanvas()">Clear Selection
                                             </button>
+                                            <textarea class="form-control" id="polygonPoints" rows="3"
+                                                      disabled></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -609,7 +612,7 @@
                 hasControls: false
             });
             canvas.add(polygon);
-
+            $('#polygonPoints').text(JSON.stringify(points));
             activeLine = null;
             activeShape = null;
             polygonMode = false;
