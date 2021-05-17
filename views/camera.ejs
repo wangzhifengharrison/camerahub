@@ -15,7 +15,10 @@
     <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/forms/theme-checkbox-radio.css">
     <link rel="stylesheet" type="text/css" href="plugins/bootstrap-select/bootstrap-select.min.css">
-    <link href="assets/css/tables/table-basic.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/forms/switches.css">
+    <link rel="stylesheet" type="text/css" href="plugins/table/datatable/datatables.css">
+    <link rel="stylesheet" type="text/css" href="plugins/table/datatable/dt-global_style.css">
+
     <!-- END PAGE LEVEL CUSTOM STYLES -->
 </head>
 <body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="140">
@@ -132,7 +135,7 @@
                         <div class="widget-content widget-content-area">
                             <div class="table-responsive">
                                 <% if (cameras && Object.keys(cameras).length > 0) { %>
-                                    <table class="table table-bordered table-hover mb-4">
+                                    <table id="zero-config" class="table table-bordered table-hover mb-4">
                                         <thead>
                                         <tr>
                                             <th>Camera ID</th>
@@ -234,6 +237,83 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="form-group row mb-4">
+                                    <label for="hatTrigger" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Detect
+                                        Hat</label>
+                                    <div class="col-xl-10 col-lg-9 col-sm-10">
+                                        <label class="switch s-icons s-outline s-outline-success mt-2">
+                                            <input type="checkbox" name="hatTrigger" id="hatTrigger" checked="">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label for="vestTrigger" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Detect
+                                        Vest</label>
+                                    <div class="col-xl-10 col-lg-9 col-sm-10">
+                                        <label class="switch s-icons s-outline s-outline-success mt-2">
+                                            <input type="checkbox" name="vestTrigger" id="vestTrigger" checked="">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label for="runningTrigger" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Detect
+                                        Running</label>
+                                    <div class="col-xl-10 col-lg-9 col-sm-10">
+                                        <label class="switch s-icons s-outline s-outline-success mt-2">
+                                            <input type="checkbox" name="runningTrigger" id="runningTrigger" checked="">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label for="failingTrigger" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Detect
+                                        Failing</label>
+                                    <div class="col-xl-10 col-lg-9 col-sm-10">
+                                        <label class="switch s-icons s-outline s-outline-success mt-2">
+                                            <input type="checkbox" name="failingTrigger" id="failingTrigger" checked="">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label for="zoneTrigger" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Detect
+                                        Restricted Area</label>
+                                    <div class="col-xl-10 col-lg-9 col-sm-10">
+                                        <label class="switch s-icons s-outline s-outline-success mt-2">
+                                            <input type="checkbox" name="zoneTrigger" id="zoneTrigger" checked="">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-4">
+
+                                    <div class="col-xl-12 col-lg-12 col-sm-12">
+                                        <div class="custom-file-container" data-upload-id="myFirstImage">
+                                            <label for="selectImage">Select Camera Preview Image (Single
+                                                File)</label>
+                                            <input type="file" class="form-control-file" id="selectImage"
+                                                   accept=".jpg, .jpeg, .png">
+                                            <canvas id="cameraCanvas" width="640" height="480"
+                                                    style="border:1px solid #d3d3d3;">
+                                                Your browser does not support the HTML5 canvas tag.
+                                            </canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-sm-12">
+                                        <p>Click the image to start drawing a polygon of detection area, click Red
+                                            Dot again
+                                            to finish polygon</p>
+                                        <button class="btn btn-block btn-dark mb-2" type="button"
+                                                onclick="clearCanvas()">Clear Selection
+                                        </button>
+                                        <textarea class="form-control" id="polygonPoints" name="polygonPoints"
+                                                  rows="4"
+                                                  readonly></textarea>
+                                    </div>
+                                </div>
 
                                 <div class="form-group row">
                                     <div class="col-sm-10">
@@ -272,9 +352,238 @@
 <!-- BEGIN PAGE LEVEL CUSTOM SCRIPTS -->
 <script src="assets/js/scrollspyNav.js"></script>
 <script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="plugins/table/datatable/datatables.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.3.1/fabric.min.js"
+        integrity="sha512-ACqMrfAtm537AWzgx/xQ57JnFxXeq8RylQMGg4y/e6M2ew4Z8NycE8aId/Bt2ZE+w1gNsox3MgwxKl7SGMRdtA=="
+        crossorigin="anonymous"></script>
 <script>
     checkall('todoAll', 'todochkbox');
     $('[data-toggle="tooltip"]').tooltip()
+</script>
+<script>
+    $('#zero-config').DataTable({
+        "oLanguage": {
+            "oPaginate": {
+                "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>',
+                "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>'
+            },
+            "sInfo": "Showing page _PAGE_ of _PAGES_",
+            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+            "sSearchPlaceholder": "Search...",
+            "sLengthMenu": "Results :  _MENU_",
+        },
+        "stripeClasses": [],
+        "lengthMenu": [7, 10, 20, 50],
+        "pageLength": 7
+    });
+</script>
+<script>
+
+    $(window).on('load', function () {
+        prototypefabric.initCanvas();
+        $('#create-polygon').click(function () {
+            prototypefabric.polygon.drawPolygon();
+        });
+    });
+
+    var min = 99;
+    var max = 999999;
+    var polygonMode = true;
+    var pointArray = [];
+    var lineArray = [];
+    var activeLine;
+    var activeShape = false;
+    var polygon;
+    var canvas;
+
+    var prototypefabric = new function () {
+        this.initCanvas = function () {
+            canvas = window._canvas = new fabric.Canvas('cameraCanvas');
+            //canvas.setWidth($(window).width());
+            //canvas.setHeight($(window).height()-$('#nav-bar').height());
+            //canvas.selection = false;
+            //let bgImage = new Image();
+            //bgImage.src = "../assets/img/camera.jpg";
+            //canvas.setBackgroundColor({source: bgImage, repeat: 'repeat'})
+            canvas.on('mouse:down', function (options) {
+                if (options.target && options.target.id == pointArray[0].id) {
+                    prototypefabric.polygon.generatePolygon(pointArray);
+                }
+                if (polygonMode) {
+                    prototypefabric.polygon.addPoint(options);
+                }
+            });
+            canvas.on('mouse:up', function (options) {
+
+            });
+            canvas.on('mouse:move', function (options) {
+                if (activeLine && activeLine.class == "line") {
+                    var pointer = canvas.getPointer(options.e);
+                    activeLine.set({x2: pointer.x, y2: pointer.y});
+
+                    var points = activeShape.get("points");
+                    points[pointArray.length] = {
+                        x: pointer.x,
+                        y: pointer.y
+                    }
+                    activeShape.set({
+                        points: points
+                    });
+                    canvas.renderAll();
+                }
+                canvas.renderAll();
+            });
+        };
+    };
+
+    prototypefabric.polygon = {
+        drawPolygon: function () {
+            polygonMode = true;
+            pointArray = [];
+            lineArray = [];
+            activeLine;
+        },
+        addPoint: function (options) {
+            var random = Math.floor(Math.random() * (max - min + 1)) + min;
+            var id = new Date().getTime() + random;
+            var circle = new fabric.Circle({
+                radius: 5,
+                fill: '#ffffff',
+                stroke: '#333333',
+                strokeWidth: 0.5,
+                left: (options.e.layerX / canvas.getZoom()),
+                top: (options.e.layerY / canvas.getZoom()),
+                selectable: false,
+                hasBorders: false,
+                hasControls: false,
+                originX: 'center',
+                originY: 'center',
+                id: id,
+                objectCaching: false
+            });
+            if (pointArray.length == 0) {
+                circle.set({
+                    fill: 'red'
+                })
+            }
+            var points = [(options.e.layerX / canvas.getZoom()), (options.e.layerY / canvas.getZoom()), (options.e.layerX / canvas.getZoom()), (options.e.layerY / canvas.getZoom())];
+            line = new fabric.Line(points, {
+                strokeWidth: 2,
+                fill: '#999999',
+                stroke: '#999999',
+                class: 'line',
+                originX: 'center',
+                originY: 'center',
+                selectable: false,
+                hasBorders: false,
+                hasControls: false,
+                evented: false,
+                objectCaching: false
+            });
+            if (activeShape) {
+                var pos = canvas.getPointer(options.e);
+                var points = activeShape.get("points");
+                points.push({
+                    x: pos.x,
+                    y: pos.y
+                });
+                var polygon = new fabric.Polygon(points, {
+                    stroke: '#333333',
+                    strokeWidth: 1,
+                    fill: '#cccccc',
+                    opacity: 0.3,
+                    selectable: false,
+                    hasBorders: false,
+                    hasControls: false,
+                    evented: false,
+                    objectCaching: false
+                });
+                canvas.remove(activeShape);
+                canvas.add(polygon);
+                activeShape = polygon;
+                canvas.renderAll();
+            } else {
+                var polyPoint = [{x: (options.e.layerX / canvas.getZoom()), y: (options.e.layerY / canvas.getZoom())}];
+                var polygon = new fabric.Polygon(polyPoint, {
+                    stroke: '#333333',
+                    strokeWidth: 1,
+                    fill: '#cccccc',
+                    opacity: 0.3,
+                    selectable: false,
+                    hasBorders: false,
+                    hasControls: false,
+                    evented: false,
+                    objectCaching: false
+                });
+                activeShape = polygon;
+                canvas.add(polygon);
+            }
+            activeLine = line;
+
+            pointArray.push(circle);
+            lineArray.push(line);
+
+            canvas.add(line);
+            canvas.add(circle);
+            canvas.selection = false;
+        },
+        generatePolygon: function (pointArray) {
+            var points = [];
+            $.each(pointArray, function (index, point) {
+                points.push({
+                    x: point.left,
+                    y: point.top
+                });
+                canvas.remove(point);
+            });
+            $.each(lineArray, function (index, line) {
+                canvas.remove(line);
+            });
+            canvas.remove(activeShape).remove(activeLine);
+            polygon = new fabric.Polygon(points, {
+                stroke: '#333333',
+                strokeWidth: 0.5,
+                fill: 'red',
+                opacity: 0.4,
+                hasBorders: false,
+                hasControls: false
+            });
+            canvas.add(polygon);
+            $('#polygonPoints').text(JSON.stringify(points));
+            activeLine = null;
+            activeShape = null;
+            polygonMode = false;
+            canvas.selection = true;
+        }
+    };
+
+    const fileSelector = document.getElementById('selectImage');
+    fileSelector.addEventListener('change', (event) => {
+        let files = event.target.files;
+        if (files.length < 1) {
+            alert('select a file...');
+            return;
+        }
+        let file = files[0];
+        let reader = new FileReader();
+        reader.onload = function () {
+            let bgImage = new Image();
+            bgImage.src = reader.result;
+            canvas.setBackgroundColor({source: bgImage, repeat: 'repeat'});
+        }
+        reader.readAsDataURL(file);
+
+    });
+
+    function clearCanvas() {
+        $('#polygonPoints').text('');
+        polygonMode = true;
+        pointArray = [];
+        lineArray = [];
+        activeShape = false;
+        canvas.remove(polygon);
+    }
+
 </script>
 <!-- END PAGE LEVEL CUSTOM SCRIPTS -->
 </body>
