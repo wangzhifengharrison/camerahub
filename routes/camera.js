@@ -24,13 +24,36 @@ router.get('/', function (req, res, next) {
 
 /* POST Camera Insertion . */
 router.post('/add', function (req, res) {
+    //console.log(req.body);
     if (req.session.loggedin) {
         let cameraSN = req.body.cameraSN;
         let cameraURL = req.body.cameraFeed;
         let officeID = req.body.officeID;
+        let isTestHat = '0';
+        let isTestVest = '0';
+        let isTestRunning = '0';
+        let isTestFailing = '0';
+        let isTestArea = '0';
+        if (req.body.hatTrigger === 'on') {
+            isTestHat = '1';
+        }
+        if (req.body.vestTrigger === 'on') {
+            isTestVest = '1';
+        }
+        if (req.body.runningTrigger === 'on') {
+            isTestRunning = '1';
+        }
+        if (req.body.failingTrigger === 'on') {
+            isTestFailing = '1';
+        }
+        if (req.body.zoneTrigger === 'on') {
+            isTestArea = '1';
+        }
+        let cameraRule = isTestHat + isTestVest + isTestRunning + isTestFailing + isTestArea;
+        let ruleValue = req.body.polygonPoints;
         if (cameraSN) {
-            let query = "INSERT INTO `camera` (cameraSN, officeID, cameraURL, cameraStatus, userID) VALUES ('" +
-                cameraSN + "', '" + officeID + "', '" + cameraURL + "', '1', '" + req.session.userID + "')";
+            let query = "INSERT INTO `camera` (cameraSN, officeID, cameraURL, cameraRule, ruleValue, cameraStatus, userID) VALUES ('" +
+                cameraSN + "', '" + officeID + "', '" + cameraURL+ "', '" + cameraRule+ "', '" + ruleValue + "', '1', '" + req.session.userID + "')";
             db.query(query, (err, result) => {
                 res.redirect('/camera');
             });
@@ -40,6 +63,7 @@ router.post('/add', function (req, res) {
     } else {
         res.redirect('/user/login');
     }
+
 });
 
 /* DELETE CAMERA */
