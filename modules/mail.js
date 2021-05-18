@@ -1,7 +1,7 @@
 const mail = require('nodemailer');
 const transporter = mail.createTransport({
     service: 'gmail',
-    proxy: 'http://127.0.0.1:10809',
+    //proxy: 'http://127.0.0.1:10809', //For testing in countries which blocked gmail
     auth: {
         user: 'nodeexecutor@gmail.com',
         pass: 'sQaEEt4tkpmknkq'

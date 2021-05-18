@@ -29,6 +29,7 @@ router.post('/add', function (req, res) {
         let cameraSN = req.body.cameraSN;
         let cameraURL = req.body.cameraFeed;
         let officeID = req.body.officeID;
+        let emailRecipient = req.body.noticeMails;
         let isTestHat = '0';
         let isTestVest = '0';
         let isTestRunning = '0';
@@ -52,8 +53,8 @@ router.post('/add', function (req, res) {
         let cameraRule = isTestHat + isTestVest + isTestRunning + isTestFailing + isTestArea;
         let ruleValue = req.body.polygonPoints;
         if (cameraSN) {
-            let query = "INSERT INTO `camera` (cameraSN, officeID, cameraURL, cameraRule, ruleValue, cameraStatus, userID) VALUES ('" +
-                cameraSN + "', '" + officeID + "', '" + cameraURL + "', '" + cameraRule + "', '" + ruleValue + "', '1', '" + req.session.userID + "')";
+            let query = "INSERT INTO `camera` (cameraSN, officeID, cameraURL, cameraRule, ruleValue, emailRecipient, cameraStatus, userID) VALUES ('" +
+                cameraSN + "', '" + officeID + "', '" + cameraURL + "', '" + cameraRule + "', '" + ruleValue + "', '" + emailRecipient + "', '1', '" + req.session.userID + "')";
             db.query(query, (err, result) => {
                 res.redirect('/camera');
             });

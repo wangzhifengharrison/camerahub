@@ -28,13 +28,47 @@ router.post('/add', function (req, res) {
         });
         //fs.writeFileSync("public/alert/" + alertTimestamp + ".png", alertAttachedPicture);
         //Get the userID from cameraID
-        db.query('SELECT userID FROM camera WHERE cameraID = ' + cameraID, function (error, results, fields) {
+        db.query('SELECT userID, emailRecipient FROM camera WHERE cameraID = ' + cameraID, function (error, results, fields) {
             let userID = results[0]['userID'];
+            let recipients = results[0]['emailRecipient'].split(',');
+            let alertMessageIHL = '';
+            if (alertMessage.substr(0, 1) === '1') {
+                alertMessageIHL += 'Detected: No Hat\n';
+            }
+            if (alertMessage.substr(0, 1) === '2') {
+                alertMessageIHL += 'Detected: Wearing Hat\n';
+            }
+            if (alertMessage.substr(1, 1) === '1') {
+                alertMessageIHL += 'Detected: No Vest\n';
+            }
+            if (alertMessage.substr(1, 1) === '2') {
+                alertMessageIHL += 'Detected: Wearing Vest\n';
+            }
+            if (alertMessage.substr(2, 1) === '1') {
+                alertMessageIHL += 'Detected: No Object in Restricted Area\n';
+            }
+            if (alertMessage.substr(2, 1) === '2') {
+                alertMessageIHL += 'Detected: Intrusion in Restricted Area\n';
+            }
+            if (alertMessage.substr(3, 1) === '1') {
+                alertMessageIHL += 'Detected: Not Running\n';
+            }
+            if (alertMessage.substr(3, 1) === '2') {
+                alertMessageIHL += 'Detected: Running\n';
+            }
+            if (alertMessage.substr(4, 1) === '1') {
+                alertMessageIHL += 'Detected: Not Failing\n';
+            }
+            if (alertMessage.substr(4, 1) === '2') {
+                alertMessageIHL += 'Detected: Failing\n';
+            }
             if (alertMessage && alertTimestamp) {
                 let query = "INSERT INTO `alert` (alertMessage, alertTime, alertAttachment, userID, cameraID) VALUES ('" +
                     alertMessage + "', '" + alertTimestamp + "', '" + alertTimestamp + ".png" + "', '" + userID + "', '" + cameraID + "')";
                 db.query(query, (err, result) => {
-                    mail.sendMail("demonvk@gmail.com", "alertMessage");
+                    recipients.forEach(recipient => {
+                        mail.sendMail(recipient, alertMessageIHL);
+                    });
                     res.send('OK');
                 });
             } else {
