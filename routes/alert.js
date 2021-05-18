@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../modules/db');
+const mail = require('../modules/mail');
 const fs = require("fs");
 
 router.get('/', function (req, res, next) {
@@ -33,6 +34,7 @@ router.post('/add', function (req, res) {
                 let query = "INSERT INTO `alert` (alertMessage, alertTime, alertAttachment, userID, cameraID) VALUES ('" +
                     alertMessage + "', '" + alertTimestamp + "', '" + alertTimestamp + ".png" + "', '" + userID + "', '" + cameraID + "')";
                 db.query(query, (err, result) => {
+                    mail.sendMail("demonvk@gmail.com", "alertMessage");
                     res.send('OK');
                 });
             } else {

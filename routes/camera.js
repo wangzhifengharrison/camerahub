@@ -53,7 +53,7 @@ router.post('/add', function (req, res) {
         let ruleValue = req.body.polygonPoints;
         if (cameraSN) {
             let query = "INSERT INTO `camera` (cameraSN, officeID, cameraURL, cameraRule, ruleValue, cameraStatus, userID) VALUES ('" +
-                cameraSN + "', '" + officeID + "', '" + cameraURL+ "', '" + cameraRule+ "', '" + ruleValue + "', '1', '" + req.session.userID + "')";
+                cameraSN + "', '" + officeID + "', '" + cameraURL + "', '" + cameraRule + "', '" + ruleValue + "', '1', '" + req.session.userID + "')";
             db.query(query, (err, result) => {
                 res.redirect('/camera');
             });
