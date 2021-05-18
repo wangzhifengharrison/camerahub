@@ -1,14 +1,14 @@
 const mail = require('nodemailer');
 const transporter = mail.createTransport({
     service: 'gmail',
-    //proxy: 'http://127.0.0.1:10809', //For testing in countries which blocked gmail
+    //proxy: 'http://127.0.0.1:10809', //For testing in countries which blocked gmail, via V2RAY local proxy
     auth: {
         user: 'nodeexecutor@gmail.com',
         pass: 'sQaEEt4tkpmknkq'
     }
 });
 
-exports.sendMail = function($mailAddress, $mailBody) {
+exports.sendMail = function ($mailAddress, $mailBody) {
     let mailOptions = {
         from: 'nodeexecutor@gmail.com',
         to: $mailAddress,
@@ -16,7 +16,7 @@ exports.sendMail = function($mailAddress, $mailBody) {
         text: $mailBody
     };
 
-    transporter.sendMail(mailOptions, function(error, info){
+    transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error);
         } else {
