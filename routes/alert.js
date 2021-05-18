@@ -44,21 +44,28 @@ router.post('/add', function (req, res) {
             if (alertMessage.substr(1, 1) === '2') {
                 alertMessageIHL += 'Detected: Wearing Vest\n';
             }
+            /*
             if (alertMessage.substr(2, 1) === '1') {
                 alertMessageIHL += 'Detected: No Object in Restricted Area\n';
             }
+             */
             if (alertMessage.substr(2, 1) === '2') {
                 alertMessageIHL += 'Detected: Intrusion in Restricted Area\n';
             }
+            /*
             if (alertMessage.substr(3, 1) === '1') {
                 alertMessageIHL += 'Detected: Not Running\n';
             }
+             */
             if (alertMessage.substr(3, 1) === '2') {
                 alertMessageIHL += 'Detected: Running\n';
             }
-            if (alertMessage.substr(4, 1) === '1') {
-                alertMessageIHL += 'Detected: Not Failing\n';
-            }
+            /*
+           if (alertMessage.substr(4, 1) === '1') {
+               alertMessageIHL += 'Detected: Not Failing\n';
+           }
+
+             */
             if (alertMessage.substr(4, 1) === '2') {
                 alertMessageIHL += 'Detected: Failing\n';
             }
