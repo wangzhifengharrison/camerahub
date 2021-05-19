@@ -153,9 +153,27 @@
                                                 <td><%= camera.cameraSN %></td>
                                                 <td><%= camera.cameraURL %></td>
                                                 <td><%= camera.officeName %></td>
-                                                <td class="text-center"><span class="text-success">Activated</span></td>
+                                                <td class="text-center">
+                                                    <% if(camera.cameraStatus === 1){ %><span
+                                                            class="badge badge-success">Activated</span>
+                                                    <% } else{ %><span class="badge badge-dark">Deactivated</span>
+                                                    <% } %>
+                                                </td>
                                                 <td class="text-center">
                                                     <ul class="table-controls">
+                                                        <li><a href="/camera/active/<%= camera.cameraID %>"
+                                                               data-toggle="tooltip"
+                                                               data-placement="top" title=""
+                                                               data-original-title="Set as Active">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                     height="24" viewBox="0 0 24 24" fill="none"
+                                                                     stroke="currentColor" stroke-width="2"
+                                                                     stroke-linecap="round" stroke-linejoin="round"
+                                                                     class="feather feather-activity">
+                                                                    <polyline
+                                                                            points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                                                </svg>
+                                                            </a></li>
                                                         <li><a href="/camera/del/<%= camera.cameraID %>"
                                                                data-toggle="tooltip"
                                                                data-placement="top" title=""

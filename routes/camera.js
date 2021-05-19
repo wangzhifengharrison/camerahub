@@ -54,7 +54,7 @@ router.post('/add', function (req, res) {
         let ruleValue = req.body.polygonPoints;
         if (cameraSN) {
             let query = "INSERT INTO `camera` (cameraSN, officeID, cameraURL, cameraRule, ruleValue, emailRecipient, cameraStatus, userID) VALUES ('" +
-                cameraSN + "', '" + officeID + "', '" + cameraURL + "', '" + cameraRule + "', '" + ruleValue + "', '" + emailRecipient + "', '1', '" + req.session.userID + "')";
+                cameraSN + "', '" + officeID + "', '" + cameraURL + "', '" + cameraRule + "', '" + ruleValue + "', '" + emailRecipient + "', '0', '" + req.session.userID + "')";
             db.query(query, (err, result) => {
                 res.redirect('/camera');
             });
@@ -76,6 +76,24 @@ router.get('/del/:cameraID', function (req, res, next) {
             db.query(query, (err, result) => {
                 //response.send(err.toString());
                 res.redirect('/camera');
+            });
+        }
+    } else {
+        res.redirect('/user/login');
+    }
+});
+
+//Set One Camera Activated
+router.get('/active/:cameraID', function (req, res, next) {
+    if (req.session.loggedin) {
+        let cameraID = req.params.cameraID;
+        if (cameraID) {
+            let query = "UPDATE `camera` SET cameraStatus = 0";
+            db.query(query, (err, result) => {
+                let query = "UPDATE `camera` SET cameraStatus = 1 WHERE cameraID = '" + cameraID + "'";
+                db.query(query, (err, result) => {
+                    res.redirect('/camera');
+                });
             });
         }
     } else {
