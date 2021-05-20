@@ -111,7 +111,8 @@
         </ul>
     </header>
 </div>
-
+<link href="/plugins/notification/snackbar/snackbar.min.css" rel="stylesheet" type="text/css">
+<script src="/plugins/notification/snackbar/snackbar.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
     let socket = io();
@@ -121,6 +122,10 @@
         let msgValue = tempArray[0];
         let time = tempArray[1];
         $("#alertList").prepend('<div class="dropdown-item"><div class="media server-log"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"> <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect> <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect> <line x1="6" y1="6" x2="6" y2="6"></line> <line x1="6" y1="18" x2="6" y2="18"></line> </svg><div class="media-body"><div class="data-info""><a href="/notification"><h6 class="">New Alert!!!!</h6><p class="">' + time + '</p></a></div></div></div></div>');
+        Snackbar.show({
+            text: 'New Alert Received',
+            pos: 'top-right'
+        });
     });
     socket.emit('login', <%= locals.userID %>);
 </script>
