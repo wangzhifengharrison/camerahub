@@ -3,23 +3,33 @@ const router = express.Router();
 const db = require('../modules/db');
 const mail = require('../modules/mail');
 const fs = require("fs");
-const alert = require('../modules/alert');
+const alert = require('../bin/www');
 
 router.get('/', function (req, res, next) {
-    db.query('SELECT userID FROM camera WHERE cameraID = ' + '1', function (error, results, fields) {
-        let resultArray = results[0];
-        res.send('Result: ' + results[0]['userID']);
-    });
+    if (req.session.loggedin) {
+
+        db.query('SELECT * FROM alert JOIN camera ON alert.cameraID = camera.cameraID WHERE alert.userID = ' + req.session.userID + ' ORDER BY alert.alertID DESC', function (error, results, fields) {
+            if (error) {
+                res.redirect('/');
+            }
+            let username = req.session.username;
+            res.locals.userID = req.session.userID;
+            res.locals.username = req.session.username;
+            res.render('alert', {userName: username, alerts: results});
+        });
+    } else {
+        res.redirect('/user/login');
+    }
 });
 
 /* POST Alert Insertion . */
-router.post('/add', function (req, res) {
+router.post('/add', function (req, res, next) {
     //let alertType = req.body.alertType;
     let alertMessage = req.body.alertMessage;
     let alertTimestamp = req.body.alertTimestamp;
     let cameraID = req.body.cameraID;
     console.log('alertMessage: ' + alertMessage);
-    //Convert Base64 Image to file and store the filename in the database
+//Convert Base64 Image to file and store the filename in the database
     //let alertAttachedPicture = new Buffer(req.body.alertAttachedPicture, 'base64');
     let alertAttachedPicture = req.body.alertAttachedPicture;
     if (alertAttachedPicture.indexOf('data:image\/png;base64') > -1) {
@@ -74,9 +84,12 @@ router.post('/add', function (req, res) {
                 let query = "INSERT INTO `alert` (alertMessage, alertTime, alertAttachment, userID, cameraID) VALUES ('" +
                     alertMessage + "', '" + alertTimestamp + "', '" + alertTimestamp + ".png" + "', '" + userID + "', '" + cameraID + "')";
                 db.query(query, (err, result) => {
+                    //Send Email
                     recipients.forEach(recipient => {
                         mail.sendMail(recipient, alertMessageIHL);
                     });
+                    //Websocket
+                    alert.ioObject.sockets.emit('alert', cameraID + '|' + alertMessageIHL + '|' + alertTimestamp);
                     res.send('OK');
                 });
             } else {
@@ -86,7 +99,6 @@ router.post('/add', function (req, res) {
     } else {
         res.send('IMAGE ERROR');
     }
-
 });
 
 /* DELETE Alert */

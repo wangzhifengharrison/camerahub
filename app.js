@@ -24,8 +24,8 @@ app.use(cookieParser('SHOW ME THE CAMERA'));
 const MemoryStore = session.MemoryStore;
 app.use(session({
     secret: 'SHOW ME THE CAMERA',
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
     store: new MemoryStore(),
     cookie: {
         secure: false,
@@ -43,7 +43,14 @@ app.use('/camera', cameraRouter);
 app.use('/office', officeRouter);
 app.use('/rule', ruleRouter);
 app.use('/user', userRouter);
-app.use('/alert', alertRouter);
+app.use('/notification', alertRouter);
+
+app.use(function(req, res, next) {
+    res.locals.userID = req.session.userID;
+    res.locals.username = req.session.username;
+    console.log('MIDDLEWARE LOCALS VALUE USERID: ' + res.locals.userID);
+    next();
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -55,7 +62,6 @@ app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
-
     // render the error page
     res.status(err.status || 500);
     res.render('error');

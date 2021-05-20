@@ -20,15 +20,17 @@ app.set('port', port);
  */
 
 const server = http.createServer(app);
+const io = require('socket.io')(server);
 
-const {Server} = require("socket.io");
-const io = new Server(server);
-global._io = io;
-io.on('connection', (socket) => {
-    socket.on('login', (data) => {
-        console.log(data)
-    });
+io.sockets.on("connection", function (socket) {
+    console.log("Server-Client Connected!");
 });
+
+const socketIoObject = io;
+module.exports.ioObject = socketIoObject;
+//const {Server} = require("socket.io");
+//const io = require('../modules/alert').initialize(server);
+
 /**
  * Listen on provided port, on all network interfaces.
  */

@@ -4,7 +4,7 @@
         <ul class="navbar-nav theme-brand flex-row  text-center">
             <li class="nav-item theme-logo">
                 <a href="/">
-                    <img src="assets/img/90x90.jpg" class="navbar-logo" alt="logo">
+                    <img src="/assets/img/90x90.jpg" class="navbar-logo" alt="logo">
                 </a>
             </li>
             <li class="nav-item theme-text">
@@ -31,7 +31,7 @@
             <li class="nav-item dropdown language-dropdown more-dropdown">
                 <div class="dropdown  custom-dropdown-icon">
                     <a class="dropdown-toggle btn" href="#" role="button" id="langDropdown" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false"><img src="assets/img/ca.png" class="flag-width"
+                       aria-haspopup="true" aria-expanded="false"><img src="/assets/img/ca.png" class="flag-width"
                                                                        alt="flag"><span>English</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -42,14 +42,14 @@
 
                     <div class="dropdown-menu dropdown-menu-right animated fadeInUp" aria-labelledby="langDropdown">
                         <a class="dropdown-item" data-img-value="de" data-value="German" href="javascript:void(0);"><img
-                                    src="assets/img/de.png" class="flag-width" alt="flag"> German</a>
+                                    src="/assets/img/de.png" class="flag-width" alt="flag"> German</a>
                         <a class="dropdown-item" data-img-value="jp" data-value="Japanese"
-                           href="javascript:void(0);"><img src="assets/img/jp.png" class="flag-width" alt="flag">
+                           href="javascript:void(0);"><img src="/assets/img/jp.png" class="flag-width" alt="flag">
                             Japanese</a>
                         <a class="dropdown-item" data-img-value="fr" data-value="French" href="javascript:void(0);"><img
-                                    src="assets/img/fr.png" class="flag-width" alt="flag"> French</a>
+                                    src="/assets/img/fr.png" class="flag-width" alt="flag"> French</a>
                         <a class="dropdown-item" data-img-value="ca" data-value="English"
-                           href="javascript:void(0);"><img src="assets/img/ca.png" class="flag-width" alt="flag">
+                           href="javascript:void(0);"><img src="/assets/img/ca.png" class="flag-width" alt="flag">
                             English</a>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                 <div class="dropdown-menu position-absolute animated fadeInUp" aria-labelledby="userProfileDropdown">
                     <div class="user-profile-section">
                         <div class="media mx-auto">
-                            <img src="assets/img/90x90.jpg" class="img-fluid mr-2" alt="avatar">
+                            <img src="/assets/img/90x90.jpg" class="img-fluid mr-2" alt="avatar">
                             <div class="media-body">
                                 <h5>User</h5>
                                 <p>Administrators</p>
@@ -116,9 +116,11 @@
 <script>
     let socket = io();
     socket.on('alert', function (msg) {
+        console.log('Get Alert Message');
         let tempArray = msg.split('|');
         let msgValue = tempArray[0];
         let time = tempArray[1];
-        $("#alertList").prepend('<div class="dropdown-item"><div class="media server-log"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"> <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect> <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect> <line x1="6" y1="6" x2="6" y2="6"></line> <line x1="6" y1="18" x2="6" y2="18"></line> </svg><div class="media-body"><div class="data-info"><h6 class="">' + msgValue + '</h6><p class="">' + time + '</p></div></div></div></div>');
+        $("#alertList").prepend('<div class="dropdown-item"><div class="media server-log"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"> <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect> <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect> <line x1="6" y1="6" x2="6" y2="6"></line> <line x1="6" y1="18" x2="6" y2="18"></line> </svg><div class="media-body"><div class="data-info""><a href="/notification"><h6 class="">New Alert!!!!</h6><p class="">' + time + '</p></a></div></div></div></div>');
     });
+    socket.emit('login', <%= locals.userID %>);
 </script>

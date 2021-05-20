@@ -5,7 +5,9 @@ const db = require('../modules/db');
 /* GET home page. */
 router.get('/', function (req, res, next) {
     if (req.session.loggedin) {
-        res.render('main',);
+        res.locals.userID = req.session.userID;
+        res.locals.username = req.session.username;
+        res.render('main');
     } else {
         res.redirect('/user/login');
     }

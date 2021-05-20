@@ -22,7 +22,7 @@ router.get('/', function (req, res, next) {
 });
 
 /* POST Rule Insertion . */
-router.post('/add', function (req, res) {
+router.post('/add', function (req, res, next) {
     if (req.session.loggedin) {
         let cameraID = req.body.cameraID;
         let ruleType = req.body.ruleType;

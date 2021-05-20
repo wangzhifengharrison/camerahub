@@ -13,6 +13,8 @@ router.get('/', function (req, res, next) {
                     res.redirect('/');
                 }
                 let username = req.session.username;
+                res.locals.userID = req.session.userID;
+                res.locals.username = req.session.username;
                 res.render('camera', {userName: username, offices: officeResults, cameras: results});
             });
         });
@@ -23,7 +25,7 @@ router.get('/', function (req, res, next) {
 });
 
 /* POST Camera Insertion . */
-router.post('/add', function (req, res) {
+router.post('/add', function (req, res, next) {
     //console.log(req.body);
     if (req.session.loggedin) {
         let cameraSN = req.body.cameraSN;

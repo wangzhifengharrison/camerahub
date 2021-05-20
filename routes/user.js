@@ -6,7 +6,7 @@ router.get('/login', function (req, res, next) {
     res.render('login', {ErrorInfo: ''});
 });
 
-router.post('/login', function (req, res) {
+router.post('/login', function (req, res, next) {
     let username = req.body.username;
     let password = req.body.password;
     if (username && password) {
@@ -17,6 +17,8 @@ router.post('/login', function (req, res) {
                     req.session.loggedin = true;
                     req.session.username = results[0].userName;
                     req.session.userID = results[0].userID;
+                    //res.locals.userID = req.session.userID;
+                    //res.locals.username = req.session.username;
                     res.redirect('/');
                 } else {
                     res.render('login', {ErrorInfo: 'Username and Password not match!'});
