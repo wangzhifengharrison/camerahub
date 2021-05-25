@@ -112,4 +112,11 @@ router.get('/del/:alertID', function (req, res, next) {
     }
 });
 
+router.get('/wipe', function (req, res, next) {
+    let query = "TRUNCATE TABLE `alert`";
+    db.query(query, (err, result) => {
+        res.redirect('/notification');
+    });
+});
+
 module.exports = router;
