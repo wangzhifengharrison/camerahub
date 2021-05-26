@@ -106,10 +106,18 @@ router.get('/active/:cameraID', function (req, res, next) {
 
 // API ACCESS FOR CAMERA List
 router.get('/list', function (req, res, next) {
-    let query = "SELECT * FROM `camera";
+    let query = "SELECT * FROM camera";
     db.query(query, (err, result) => {
         res.send(JSON.stringify(result));
     });
 });
+
+router.get('/getone', function (req, res, next) {
+    let query = "SELECT * FROM camera WHERE cameraStatus = 1";
+    db.query(query, (err, result) => {
+        res.send(JSON.stringify(result));
+    });
+});
+
 
 module.exports = router;

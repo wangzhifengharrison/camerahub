@@ -333,7 +333,7 @@
                                                 File)</label>
                                             <input type="file" class="form-control-file" id="selectImage"
                                                    accept=".jpg, .jpeg, .png">
-                                            <canvas id="cameraCanvas" width="640" height="480"
+                                            <canvas id="cameraCanvas" width="1024" height="576"
                                                     style="border:1px solid #d3d3d3;">
                                                 Your browser does not support the HTML5 canvas tag.
                                             </canvas>
@@ -606,7 +606,8 @@
         reader.onload = function () {
             let bgImage = new Image();
             bgImage.src = reader.result;
-            canvas.setBackgroundColor({source: bgImage, repeat: 'repeat'});
+            //bgImage.scaleToWidth(1024);
+            canvas.setBackgroundColor({source: bgImage}, canvas.renderAll.bind(canvas));
         }
         reader.readAsDataURL(file);
 
