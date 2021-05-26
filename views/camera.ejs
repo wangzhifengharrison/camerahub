@@ -18,13 +18,13 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/forms/switches.css">
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/datatables.css">
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/dt-global_style.css">
-
+    <link href="/assets/css/elements/avatar.css" rel="stylesheet" type="text/css"/>
     <!-- END PAGE LEVEL CUSTOM STYLES -->
 </head>
 <body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="140">
 
 <!--  BEGIN NAVBAR  -->
-<%- include partials/header.ejs %>
+<!--<%- include partials/header.ejs %>-->
 <!--  END NAVBAR  -->
 
 <!--  BEGIN MAIN CONTAINER  -->
@@ -35,17 +35,9 @@
     <div class="search-overlay"></div>
 
     <!--  BEGIN SIDEBAR  -->
-    <div class="sidebar-wrapper sidebar-theme">
-
+    <div class="sidebar-wrapper sidebar-theme" style="top: 0">
+        <div class="text-center mt-3"><img src="/assets/img/logo.png" width=150 alt="logo"></div>
         <nav id="sidebar">
-            <div class="profile-info">
-                <figure class="user-cover-image"></figure>
-                <div class="user-info">
-                    <img src="/assets/img/90x90.jpg" alt="avatar">
-                    <h6 class="">User Alpha</h6>
-                    <p class="">RTI IT Conslution</p>
-                </div>
-            </div>
 
             <div class="shadow-bottom"></div>
             <ul class="list-unstyled menu-categories" id="accordionExample">
@@ -62,6 +54,7 @@
                         </div>
                     </a>
                 </li>
+                <hr>
                 <li class="menu">
                     <a href="/office" aria-expanded="false" class="dropdown-toggle">
                         <div class="">
@@ -126,12 +119,22 @@
                </li>
                -->
             </ul>
+            <div class="profile-info">
+
+                <div class="user-info" style="height: auto">
+                    <div class="avatar avatar-xl">
+                        <span class="avatar-title rounded-circle">AG</span>
+                    </div>
+                    <h6 class="">User Alpha</h6>
+                    <p class="">RTI IT Conslution</p>
+                </div>
+            </div>
         </nav>
     </div>
     <!--  END SIDEBAR  -->
 
     <!--  BEGIN CONTENT AREA  -->
-    <div id="content" class="main-content">
+    <div id="content" class="main-content" style="margin-top:0">
         <div class="layout-px-spacing">
             <div class="row layout-top-spacing">
                 <div id="tableCamera" class="col-lg-12 col-12 layout-spacing">
