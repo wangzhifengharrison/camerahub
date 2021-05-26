@@ -45,7 +45,7 @@ app.use('/rule', ruleRouter);
 app.use('/user', userRouter);
 app.use('/notification', alertRouter);
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.locals.userID = req.session.userID;
     res.locals.username = req.session.username;
     console.log('MIDDLEWARE LOCALS VALUE USERID: ' + res.locals.userID);
