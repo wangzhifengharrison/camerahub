@@ -130,7 +130,7 @@ body.swal2-iosfix {
 .swal2-modal .swal2-image {
   margin: 20px auto;
   max-width: 100%;
-  width: 50%;
+  /*width: 50%;*/
   border-radius: 6px; }
 
 .swal2-modal .swal2-close {
