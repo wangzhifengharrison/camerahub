@@ -67,7 +67,7 @@
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
-                            <span>Office</span>
+                            <span>Location</span>
                         </div>
                     </a>
                 </li>
@@ -135,7 +135,7 @@
                         <div class="widget-header">
                             <div class="row">
                                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                    <h4>Office List</h4>
+                                    <h4>Location List</h4>
                                 </div>
                             </div>
                         </div>
@@ -145,8 +145,8 @@
                                     <table class="table table-bordered table-hover mb-4">
                                         <thead>
                                         <tr>
-                                            <th>Office ID</th>
-                                            <th>Office Name</th>
+                                            <th>Location ID</th>
+                                            <th>Location Name</th>
                                             <th class="text-center">Status</th>
                                             <th></th>
                                         </tr>
@@ -193,7 +193,7 @@
                                                 <line x1="6" y1="6" x2="18" y2="18"></line>
                                             </svg>
                                         </button>
-                                        <strong>Error!</strong> No Office Found.
+                                        <strong>Error!</strong> No Location Found.
                                     </div>
                                 <% } %>
                             </div>
@@ -207,14 +207,14 @@
                         <div class="widget-header">
                             <div class="row">
                                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                    <h4>Adding a new Office</h4>
+                                    <h4>Adding a new Location</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="widget-content widget-content-area">
                             <form action="/office/add" method="post">
                                 <div class="form-group row mb-4">
-                                    <label for="officeName" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Office
+                                    <label for="officeName" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Location
                                         Name</label>
                                     <div class="col-xl-10 col-lg-9 col-sm-10">
                                         <input type="text" class="form-control" id="officeName" name="officeName"
@@ -223,7 +223,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-primary mt-3">Add new Office</button>
+                                        <button type="submit" class="btn btn-primary mt-3">Add new Location</button>
                                     </div>
                                 </div>
                             </form>
