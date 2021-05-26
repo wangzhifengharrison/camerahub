@@ -9,9 +9,15 @@ router.get('/', function (req, res, next) {
             if (error) {
                 res.redirect('/');
             }
-            res.locals.userID = req.session.userID;
-            res.locals.username = req.session.username;
-            res.render('main',{userName: res.locals.username, alerts: results});
+            db.query('SELECT (SELECT COUNT(*) FROM alert) AS alertCount, (SELECT COUNT(*) FROM camera) AS cameraCount, (SELECT COUNT(*) FROM office) AS officeCount', function (error, countResults, fields) {
+                if (error) {
+                    res.redirect('/');
+                }
+                res.locals.userID = req.session.userID;
+                res.locals.username = req.session.username;
+                res.render('main', {userName: res.locals.username, alerts: results, countResults: countResults});
+            });
+
         });
 
     } else {

@@ -140,14 +140,16 @@
     <div id="content" class="main-content" style="margin-top:15px">
 
         <div class="layout-px-spacing">
-            <h3>Dashboard</h3>
+            <blockquote class="blockquote">
+                <h4>Dashboard</h4>
+            </blockquote>
             <div class="row layout-top-spacing">
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
                     <div class="widget widget-card-four">
                         <div class="widget-content">
                             <div class="w-content">
                                 <div class="w-info">
-                                    <h6 class="value">1</h6>
+                                    <h6 class="value"><%= countResults[0].officeCount %></h6>
                                     <p class="">Location</p>
                                 </div>
                                 <div class="">
@@ -170,7 +172,7 @@
                         <div class="widget-content">
                             <div class="w-content">
                                 <div class="w-info">
-                                    <h6 class="value">1</h6>
+                                    <h6 class="value"><%= countResults[0].cameraCount %></h6>
                                     <p class="">Cameras</p>
                                 </div>
                                 <div class="">
@@ -193,7 +195,7 @@
                         <div class="widget-content">
                             <div class="w-content">
                                 <div class="w-info">
-                                    <h6 class="value">1</h6>
+                                    <h6 class="value"><%= countResults[0].alertCount %></h6>
                                     <p class="">Alert</p>
                                 </div>
                                 <div class="">
