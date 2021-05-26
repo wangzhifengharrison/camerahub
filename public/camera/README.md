@@ -1,0 +1,1 @@
+This is camera preview image upload folder

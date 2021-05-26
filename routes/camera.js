@@ -1,6 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../modules/db');
+const multer = require('multer');
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/camera')
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + file.originalname.substring(file.originalname.length - 4))
+    }
+})
+const upload = multer({storage: storage})
 
 router.get('/', function (req, res, next) {
     if (req.session.loggedin) {
@@ -25,9 +35,11 @@ router.get('/', function (req, res, next) {
 });
 
 /* POST Camera Insertion . */
-router.post('/add', function (req, res, next) {
+router.post('/add', upload.single('selectImage'), function (req, res, next) {
     //console.log(req.body);
     if (req.session.loggedin) {
+        //console.log('req.body.selectImage ' + req.body.selectImage);
+        //console.log('req.file ' + req.files);
         let cameraSN = req.body.cameraSN;
         let cameraURL = req.body.cameraFeed;
         let officeID = req.body.officeID;
@@ -37,6 +49,12 @@ router.post('/add', function (req, res, next) {
         let isTestRunning = '0';
         let isTestFailing = '0';
         let isTestArea = '0';
+        let cameraImage = ''
+        if (req.file) {
+            console.log('Camera Image: ' + req.file.filename);
+            cameraImage = req.file.filename;
+        }
+
         if (req.body.hatTrigger === 'on') {
             isTestHat = '1';
         }
@@ -55,14 +73,17 @@ router.post('/add', function (req, res, next) {
         let cameraRule = isTestHat + isTestVest + isTestRunning + isTestFailing + isTestArea;
         let ruleValue = req.body.polygonPoints;
         if (cameraSN) {
-            let query = "INSERT INTO `camera` (cameraSN, officeID, cameraURL, cameraRule, ruleValue, emailRecipient, cameraStatus, userID) VALUES ('" +
-                cameraSN + "', '" + officeID + "', '" + cameraURL + "', '" + cameraRule + "', '" + ruleValue + "', '" + emailRecipient + "', '0', '" + req.session.userID + "')";
+            let query = "INSERT INTO `camera` (cameraSN, officeID, cameraURL, cameraRule, ruleValue, emailRecipient, cameraImage, cameraStatus, userID) VALUES ('" +
+                cameraSN + "', '" + officeID + "', '" + cameraURL + "', '" + cameraRule + "', '" + ruleValue + "', '" + emailRecipient + "', '" + cameraImage + "', '0', '" + req.session.userID + "')";
             db.query(query, (err, result) => {
                 res.redirect('/camera');
             });
+            //console.log(query);
+            res.redirect('/camera');
         } else {
             res.redirect('/');
         }
+
     } else {
         res.redirect('/user/login');
     }

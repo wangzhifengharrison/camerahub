@@ -217,9 +217,10 @@
                             </div>
                         </div>
                         <div class="widget-content widget-content-area">
-                            <form method="post" action="/camera/add">
+                            <form method="post" action="/camera/add" enctype="multipart/form-data">
                                 <div class="form-group row mb-4">
-                                    <label for="cameraSN" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Camera Name</label>
+                                    <label for="cameraSN" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Camera
+                                        Name</label>
                                     <div class="col-xl-10 col-lg-9 col-sm-10">
                                         <input type="text" class="form-control" id="cameraSN" name="cameraSN"
                                                placeholder="Serial Number of this Camera" required>
