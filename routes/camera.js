@@ -79,7 +79,6 @@ router.post('/add', upload.single('selectImage'), function (req, res, next) {
                 res.redirect('/camera');
             });
             //console.log(query);
-            res.redirect('/camera');
         } else {
             res.redirect('/');
         }
