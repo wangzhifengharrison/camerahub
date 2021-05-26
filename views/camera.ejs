@@ -151,7 +151,6 @@
                                         <tr>
                                             <th>Camera ID</th>
                                             <th>Camera SN</th>
-                                            <th>Camera RTSP Url</th>
                                             <th>Installed Office</th>
                                             <th class="text-center">Status</th>
                                             <th></th>
@@ -162,7 +161,7 @@
                                             <tr>
                                                 <td><%= camera.cameraID %></td>
                                                 <td><%= camera.cameraSN %></td>
-                                                <td><%= camera.cameraURL %></td>
+                                                <!--<td><%= camera.cameraURL %></td>-->
                                                 <td><%= camera.officeName %></td>
                                                 <td class="text-center">
                                                     <% if(camera.cameraStatus === 1){ %><span
@@ -170,39 +169,13 @@
                                                     <% } else{ %><span class="badge badge-dark">Deactivated</span>
                                                     <% } %>
                                                 </td>
-                                                <td class="text-center">
-                                                    <ul class="table-controls">
-                                                        <li><a href="/camera/active/<%= camera.cameraID %>"
-                                                               data-toggle="tooltip"
-                                                               data-placement="top" title=""
-                                                               data-original-title="Set as Active">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                     height="24" viewBox="0 0 24 24" fill="none"
-                                                                     stroke="currentColor" stroke-width="2"
-                                                                     stroke-linecap="round" stroke-linejoin="round"
-                                                                     class="feather feather-activity">
-                                                                    <polyline
-                                                                            points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                                                                </svg>
-                                                            </a></li>
-                                                        <li><a href="/camera/del/<%= camera.cameraID %>"
-                                                               data-toggle="tooltip"
-                                                               data-placement="top" title=""
-                                                               data-original-title="Delete">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                     height="24"
-                                                                     viewBox="0 0 24 24" fill="none"
-                                                                     stroke="currentColor"
-                                                                     stroke-width="2" stroke-linecap="round"
-                                                                     stroke-linejoin="round"
-                                                                     class="feather feather-trash-2">
-                                                                    <polyline points="3 6 5 6 21 6"></polyline>
-                                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                                                    <line x1="10" y1="11" x2="10" y2="17"></line>
-                                                                    <line x1="14" y1="11" x2="14" y2="17"></line>
-                                                                </svg>
-                                                            </a></li>
-                                                    </ul>
+                                                <td class="text-right">
+                                                    <a href="/camera/active/<%= camera.cameraID %>"
+                                                       class="btn btn-primary btn-sm">Set as Active</a>
+                                                    <a href="/camera/deactivate/<%= camera.cameraID %>"
+                                                       class="btn btn-secondary btn-sm">Set as Deactivate</a>
+                                                    <a href="/camera/del/<%= camera.cameraID %>"
+                                                       class="btn btn-danger btn-sm">Delete</a>
                                                 </td>
                                             </tr>
                                         <% }) %>

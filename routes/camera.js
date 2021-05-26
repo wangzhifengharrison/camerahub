@@ -103,6 +103,21 @@ router.get('/active/:cameraID', function (req, res, next) {
     }
 });
 
+//Set One Camera Deactivated
+router.get('/deactivate/:cameraID', function (req, res, next) {
+    if (req.session.loggedin) {
+        let cameraID = req.params.cameraID;
+        if (cameraID) {
+            let query = "UPDATE `camera` SET cameraStatus = 0 WHERE cameraID = '" + cameraID + "'";
+            db.query(query, (err, result) => {
+                res.redirect('/camera');
+            });
+        }
+    } else {
+        res.redirect('/user/login');
+    }
+});
+
 
 // API ACCESS FOR CAMERA List
 router.get('/list', function (req, res, next) {
