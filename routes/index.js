@@ -25,4 +25,15 @@ router.get('/', function (req, res, next) {
     }
 });
 
+router.get('/test', function (req, res, next) {
+    res.locals.userID = 1;
+    res.locals.username = 'TEST';
+    res.render('main', {
+        userName: res.locals.username,
+        alerts: [],
+        countResults: [{alertCount: 3, cameraCount: 1, officeCount: 1}]
+    });
+
+});
+
 module.exports = router;
