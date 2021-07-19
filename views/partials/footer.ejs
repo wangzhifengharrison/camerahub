@@ -44,5 +44,18 @@
             padding: '2em'
         });
     });
+    socket.on('serverWarning', function () {
+        console.log('Get Server Warning Message');
+        Snackbar.show({
+            text: 'New Warning Received',
+            pos: 'top-right'
+        });
+        swal({
+            title: new Date().toLocaleString() + ' Warning!',
+            text: 'AI Server Down',
+            animation: false,
+            padding: '2em'
+        });
+    });
     socket.emit('login', <%= locals.userID %>);
 </script>

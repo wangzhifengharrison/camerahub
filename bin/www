@@ -112,6 +112,7 @@ function intervalFunc() {
         serverUp = false;
     } else {
         console.log('AI Server Status: DOWN');
+        socketIoObject.emit('serverWarning');
     }
 }
 
