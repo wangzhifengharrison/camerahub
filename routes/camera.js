@@ -34,6 +34,17 @@ router.get('/', function (req, res, next) {
 
 });
 
+router.get('/test', function (req, res, next) {
+    res.locals.userID = 1;
+    res.locals.username = 'TEST';
+    res.render('camera', {
+        userName: res.locals.username,
+        offices: [],
+        cameras: []
+    });
+
+});
+
 /* POST Camera Insertion . */
 router.post('/add', upload.single('selectImage'), function (req, res, next) {
     //console.log(req.body);
