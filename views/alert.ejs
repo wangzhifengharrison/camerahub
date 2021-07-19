@@ -82,7 +82,11 @@
                 <li class="menu active">
                     <a href="/notification" aria-expanded="true" class="dropdown-toggle">
                         <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-zap">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
                             <span>Alert</span>
                         </div>
                     </a>
@@ -168,23 +172,43 @@
                                                 <td><%= alert.cameraSN %></td>
                                                 <td><%= new Date(alert.alertTime * 1000).toLocaleString("en-US") %></td>
                                                 <td>
-                                                        <% if (alert.alertMessage.substr(0,1) === '1') { %>Detected: No Hat<br><% } %>
-                                                        <% if (alert.alertMessage.substr(0,1) === '2') { %>Detected: Wearing Hat<br><% } %>
-                                                        <% if (alert.alertMessage.substr(1,1) === '1') { %>Detected: No Vest<br><% } %>
-                                                        <% if (alert.alertMessage.substr(1,1) === '2') { %>Detected: Wearing Vest<br><% } %>
-                                                        <% if (alert.alertMessage.substr(2,1) === '2') { %>Detected: Intrusion in Restricted Area<br><% } %>
-                                                        <% if (alert.alertMessage.substr(3,1) === '2') { %>Detected: Running<br><% } %>
-                                                        <% if (alert.alertMessage.substr(4,1) === '2') { %>Detected: Failing<br><% } %>
+                                                    <% if (alert.alertMessage.substr(0, 1) === '1') { %>Detected: No Hat
+                                                    <br>
+                                                    <% } %>
+                                                    <% if (alert.alertMessage.substr(0, 1) === '2') { %>Detected:
+                                                    Wearing Hat<br>
+                                                    <% } %>
+                                                    <% if (alert.alertMessage.substr(1, 1) === '1') { %>Detected: No
+                                                    Vest<br>
+                                                    <% } %>
+                                                    <% if (alert.alertMessage.substr(1, 1) === '2') { %>Detected:
+                                                    Wearing Vest<br>
+                                                    <% } %>
+                                                    <% if (alert.alertMessage.substr(2, 1) === '2') { %>Detected:
+                                                    Intrusion in Restricted Area<br>
+                                                    <% } %>
+                                                    <% if (alert.alertMessage.substr(3, 1) === '2') { %>Detected:
+                                                    Running<br>
+                                                    <% } %>
+                                                    <% if (alert.alertMessage.substr(4, 1) === '2') { %>Detected:
+                                                    Failing<br>
+                                                    <% } %>
                                                 </td>
                                                 <td class="text-center">
                                                     <ul class="table-controls">
-                                                        <li><a href="/alert/<%= alert.alertAttachment %>" target="_blank"
+                                                        <li><a href="/alert/<%= alert.alertAttachment %>"
+                                                               target="_blank"
                                                                data-toggle="tooltip"
                                                                data-placement="top" title=""
                                                                data-original-title="View Alert Image">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                     height="24" viewBox="0 0 24 24" fill="none"
+                                                                     stroke="currentColor" stroke-width="2"
+                                                                     stroke-linecap="round" stroke-linejoin="round"
+                                                                     class="feather feather-video">
                                                                     <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                                                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                                                                    <rect x="1" y="5" width="15" height="14" rx="2"
+                                                                          ry="2"></rect>
                                                                 </svg>
                                                             </a></li>
                                                     </ul>

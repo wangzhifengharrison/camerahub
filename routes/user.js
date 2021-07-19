@@ -7,6 +7,7 @@ router.get('/login', function (req, res, next) {
 });
 
 router.post('/login', function (req, res, next) {
+
     let username = req.body.username;
     let password = req.body.password;
     if (username && password) {

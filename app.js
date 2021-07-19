@@ -11,6 +11,7 @@ const officeRouter = require('./routes/office');
 const ruleRouter = require('./routes/rule');
 const userRouter = require('./routes/user');
 const alertRouter = require('./routes/alert');
+const heartRouter = require('./routes/heartbeat');
 const app = express();
 
 // view engine setup
@@ -44,6 +45,7 @@ app.use('/office', officeRouter);
 app.use('/rule', ruleRouter);
 app.use('/user', userRouter);
 app.use('/notification', alertRouter);
+app.use('/heartbeat', heartRouter);
 
 app.use(function (req, res, next) {
     res.locals.userID = req.session.userID;
