@@ -4,8 +4,9 @@ const db = require('../modules/db');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+
     if (req.session.loggedin) {
-        db.query('SELECT * FROM alert JOIN camera ON alert.cameraID = camera.cameraID WHERE alert.userID = ' + req.session.userID + ' ORDER BY alert.alertID DESC', function (error, results, fields) {
+         db.query('SELECT * FROM alert JOIN camera ON alert.cameraID = camera.cameraID WHERE alert.userID = ' + req.session.userID + ' ORDER BY alert.alertID DESC', function (error, results, fields) {
             if (error) {
                 res.redirect('/');
             }

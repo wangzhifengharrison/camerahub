@@ -1,9 +1,9 @@
 const mysql = require('mysql2');
 const connection = mysql.createPool({
-    host: 'twocent.icu',
-    user: 'test',
-    password: 'test',
-    database: 'cameraHub'
+    host: '127.0.0.1',
+    user: 'root',
+    password: '12345678',
+    database: 'synergy'
 });
 
 /*
