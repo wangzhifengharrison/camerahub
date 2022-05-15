@@ -1,0 +1,501 @@
+Server-Client Connected!
+[0mGET /camera/list [36m304 [0m29.500 ms - -[0m
+[0mGET /camera/list [36m304 [0m1.912 ms - -[0m
+[0mGET / [36m302 [0m3.244 ms - 66[0m
+[0mGET /user/login [32m200 [0m7.449 ms - 4876[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [36m304 [0m2.713 ms - -[0m
+[0mGET /assets/css/plugins.css [36m304 [0m2.287 ms - -[0m
+[0mGET /bootstrap/css/bootstrap.min.css [36m304 [0m2.900 ms - -[0m
+[0mGET /assets/css/authentication/form-2.css [36m304 [0m2.252 ms - -[0m
+[0mGET /assets/css/forms/switches.css [36m304 [0m1.824 ms - -[0m
+[0mGET /bootstrap/js/popper.min.js [36m304 [0m2.194 ms - -[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [36m304 [0m1.272 ms - -[0m
+[0mGET /bootstrap/js/bootstrap.min.js [36m304 [0m1.500 ms - -[0m
+[0mGET /assets/js/authentication/form-2.js [36m304 [0m2.659 ms - -[0m
+[0mGET /assets/img/logo.png [36m304 [0m0.940 ms - -[0m
+[0mGET /assets/css/main.css [36m304 [0m0.571 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [36m304 [0m0.811 ms - -[0m
+[0mGET /assets/css/structure.css [36m304 [0m0.561 ms - -[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [36m304 [0m0.813 ms - -[0m
+[0mGET /assets/img/favicon.ico [36m304 [0m0.366 ms - -[0m
+[0mPOST /user/login [36m302 [0m15.110 ms - 46[0m
+[0mGET / [32m200 [0m14.412 ms - 68478[0m
+[0mGET /bootstrap/css/bootstrap.min.css [36m304 [0m0.708 ms - -[0m
+[0mGET /assets/css/plugins.css [36m304 [0m2.624 ms - -[0m
+[0mGET /assets/css/scrollspyNav.css [36m304 [0m2.085 ms - -[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [36m304 [0m6.191 ms - -[0m
+[0mGET /assets/css/tables/table-basic.css [36m304 [0m3.990 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.css [36m304 [0m2.391 ms - -[0m
+[0mGET /plugins/apex/apexcharts.css [36m304 [0m4.298 ms - -[0m
+[0mGET /assets/css/widgets/modules-widgets.css [36m304 [0m2.734 ms - -[0m
+[0mGET /plugins/table/datatable/dt-global_style.css [36m304 [0m2.228 ms - -[0m
+[0mGET /assets/css/elements/avatar.css [36m304 [0m1.356 ms - -[0m
+[0mGET /assets/css/components/custom-modal.css [36m304 [0m1.574 ms - -[0m
+[0mGET /assets/css/components/custom-sweetalert.css [36m304 [0m1.595 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.css [36m304 [0m2.704 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.css [36m304 [0m1.699 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert.css [36m304 [0m1.762 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.js [36m304 [0m0.693 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.js [36m304 [0m0.807 ms - -[0m
+[0mGET /assets/css/main.css [36m304 [0m2.797 ms - -[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [36m304 [0m4.150 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [36m304 [0m2.231 ms - -[0m
+[0mGET /assets/css/structure.css [36m304 [0m2.170 ms - -[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [36m304 [0m2.842 ms - -[0m
+[0mGET /bootstrap/js/popper.min.js [36m304 [0m0.927 ms - -[0m
+[0mGET /bootstrap/js/bootstrap.min.js [36m304 [0m1.185 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.min.js [36m304 [0m3.937 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.js [36m304 [0m1.854 ms - -[0m
+[0mGET /assets/js/app.js [36m304 [0m1.982 ms - -[0m
+[0mGET /assets/js/scrollspyNav.js [36m304 [0m2.168 ms - -[0m
+[0mGET /plugins/highlight/highlight.pack.js [36m304 [0m2.302 ms - -[0m
+[0mGET /assets/js/custom.js [36m304 [0m2.592 ms - -[0m
+[0mGET /assets/img/logo.png [36m304 [0m0.834 ms - -[0m
+[0mGET /plugins/apex/apexcharts.min.js [36m304 [0m0.726 ms - -[0m
+Server-Client Connected!
+[0mGET /assets/img/favicon.ico [36m304 [0m1.273 ms - -[0m
+[0mGET /camera/ [36m304 [0m6.182 ms - -[0m
+[0mGET /bootstrap/css/bootstrap.min.css [36m304 [0m1.589 ms - -[0m
+[0mGET /assets/css/plugins.css [36m304 [0m2.890 ms - -[0m
+[0mGET /assets/css/scrollspyNav.css [36m304 [0m2.118 ms - -[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [36m304 [0m2.104 ms - -[0m
+[0mGET /assets/css/forms/switches.css [36m304 [0m2.079 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.css [36m304 [0m2.014 ms - -[0m
+[0mGET /plugins/table/datatable/dt-global_style.css [36m304 [0m1.017 ms - -[0m
+[0mGET /plugins/bootstrap-select/bootstrap-select.min.css [36m304 [0m1.111 ms - -[0m
+[0mGET /assets/css/elements/avatar.css [36m304 [0m0.327 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.css [36m304 [0m3.548 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert.css [36m304 [0m2.971 ms - -[0m
+[0mGET /assets/css/components/custom-sweetalert.css [36m304 [0m2.055 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.css [36m304 [0m2.222 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.js [36m304 [0m0.773 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.js [36m304 [0m0.784 ms - -[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [36m304 [0m0.410 ms - -[0m
+[0mGET /assets/css/main.css [36m304 [0m3.895 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [36m304 [0m2.095 ms - -[0m
+[0mGET /assets/css/structure.css [36m304 [0m2.094 ms - -[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [36m304 [0m5.312 ms - -[0m
+[0mGET /bootstrap/js/popper.min.js [36m304 [0m3.408 ms - -[0m
+[0mGET /bootstrap/js/bootstrap.min.js [36m304 [0m4.648 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.min.js [36m304 [0m1.512 ms - -[0m
+[0mGET /assets/js/app.js [36m304 [0m1.562 ms - -[0m
+[0mGET /plugins/highlight/highlight.pack.js [36m304 [0m1.609 ms - -[0m
+[0mGET /assets/js/custom.js [36m304 [0m0.901 ms - -[0m
+[0mGET /assets/js/scrollspyNav.js [36m304 [0m0.889 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.js [36m304 [0m4.861 ms - -[0m
+[0mGET /assets/img/logo.png [36m304 [0m3.574 ms - -[0m
+[0mGET /plugins/bootstrap-select/bootstrap-select.min.js [36m304 [0m3.622 ms - -[0m
+[0mGET /camera/1652492229210.jpg [36m304 [0m4.577 ms - -[0m
+[0mGET /camera/1652492352598.png [36m304 [0m6.466 ms - -[0m
+[0mGET /camera/ [36m304 [0m10.121 ms - -[0m
+[0mGET /camera/1652492479282.png [36m304 [0m1.472 ms - -[0m
+[0mGET /assets/img/favicon.ico [36m304 [0m0.413 ms - -[0m
+Server-Client Connected!
+[0mGET /camera/del/7 [36m302 [0m9.979 ms - 58[0m
+[0mGET /camera/ [32m200 [0m4.562 ms - 44916[0m
+[0mGET /bootstrap/css/bootstrap.min.css [36m304 [0m0.503 ms - -[0m
+[0mGET /assets/css/plugins.css [36m304 [0m2.377 ms - -[0m
+[0mGET /assets/css/scrollspyNav.css [36m304 [0m4.212 ms - -[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [36m304 [0m2.454 ms - -[0m
+[0mGET /plugins/bootstrap-select/bootstrap-select.min.css [36m304 [0m2.531 ms - -[0m
+[0mGET /assets/css/forms/switches.css [36m304 [0m3.852 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.css [36m304 [0m1.697 ms - -[0m
+[0mGET /plugins/table/datatable/dt-global_style.css [36m304 [0m2.330 ms - -[0m
+[0mGET /assets/css/elements/avatar.css [36m304 [0m0.856 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.css [36m304 [0m2.783 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert.css [36m304 [0m2.172 ms - -[0m
+[0mGET /assets/css/components/custom-sweetalert.css [36m304 [0m3.106 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.css [36m304 [0m1.637 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.js [36m304 [0m1.230 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.js [36m304 [0m0.423 ms - -[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [36m304 [0m2.187 ms - -[0m
+[0mGET /bootstrap/js/popper.min.js [36m304 [0m2.282 ms - -[0m
+[0mGET /bootstrap/js/bootstrap.min.js [36m304 [0m2.473 ms - -[0m
+[0mGET /assets/css/main.css [36m304 [0m1.801 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.min.js [36m304 [0m1.885 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [36m304 [0m1.981 ms - -[0m
+[0mGET /assets/css/structure.css [36m304 [0m2.603 ms - -[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [36m304 [0m4.118 ms - -[0m
+[0mGET /assets/js/app.js [36m304 [0m3.782 ms - -[0m
+[0mGET /plugins/highlight/highlight.pack.js [36m304 [0m2.055 ms - -[0m
+[0mGET /assets/js/custom.js [36m304 [0m2.054 ms - -[0m
+[0mGET /assets/js/scrollspyNav.js [36m304 [0m2.048 ms - -[0m
+[0mGET /plugins/bootstrap-select/bootstrap-select.min.js [36m304 [0m1.123 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.js [36m304 [0m0.773 ms - -[0m
+[0mGET /assets/img/logo.png [36m304 [0m1.997 ms - -[0m
+[0mGET /camera/1652492229210.jpg [36m304 [0m0.910 ms - -[0m
+[0mGET /camera/1652492352598.png [36m304 [0m1.204 ms - -[0m
+[0mGET /camera/ [36m304 [0m6.422 ms - -[0m
+[0mGET /assets/img/favicon.ico [36m304 [0m0.489 ms - -[0m
+Server-Client Connected!
+[0mGET /camera/ [32m200 [0m3.264 ms - 46428[0m
+[0mGET /bootstrap/css/bootstrap.min.css [36m304 [0m1.915 ms - -[0m
+[0mGET /assets/css/plugins.css [36m304 [0m2.959 ms - -[0m
+[0mGET /assets/css/scrollspyNav.css [36m304 [0m3.914 ms - -[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [36m304 [0m4.509 ms - -[0m
+[0mGET /assets/css/forms/switches.css [36m304 [0m2.452 ms - -[0m
+[0mGET /plugins/bootstrap-select/bootstrap-select.min.css [36m304 [0m2.302 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.css [36m304 [0m2.089 ms - -[0m
+[0mGET /plugins/table/datatable/dt-global_style.css [36m304 [0m0.536 ms - -[0m
+[0mGET /assets/css/elements/avatar.css [36m304 [0m0.582 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.css [36m304 [0m1.062 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert.css [36m304 [0m2.610 ms - -[0m
+[0mGET /assets/css/components/custom-sweetalert.css [36m304 [0m3.091 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.css [36m304 [0m1.250 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.js [36m304 [0m1.271 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.js [36m304 [0m1.746 ms - -[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [36m304 [0m0.329 ms - -[0m
+[0mGET /bootstrap/js/popper.min.js [36m304 [0m4.833 ms - -[0m
+[0mGET /assets/css/main.css [36m304 [0m3.300 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [36m304 [0m3.313 ms - -[0m
+[0mGET /assets/css/structure.css [36m304 [0m3.359 ms - -[0m
+[0mGET /bootstrap/js/bootstrap.min.js [36m304 [0m3.436 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.min.js [36m304 [0m3.709 ms - -[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [36m304 [0m1.056 ms - -[0m
+[0mGET /assets/js/app.js [36m304 [0m1.455 ms - -[0m
+[0mGET /plugins/highlight/highlight.pack.js [36m304 [0m1.796 ms - -[0m
+[0mGET /assets/js/custom.js [36m304 [0m3.646 ms - -[0m
+[0mGET /assets/js/scrollspyNav.js [36m304 [0m2.182 ms - -[0m
+[0mGET /plugins/bootstrap-select/bootstrap-select.min.js [36m304 [0m2.260 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.js [36m304 [0m2.349 ms - -[0m
+[0mGET /assets/img/logo.png [36m304 [0m5.245 ms - -[0m
+[0mGET /camera/1652492229210.jpg [36m304 [0m2.128 ms - -[0m
+[0mGET /camera/1652492352598.png [36m304 [0m3.587 ms - -[0m
+[0mGET /camera/ [36m304 [0m10.739 ms - -[0m
+[0mGET /assets/img/favicon.ico [36m304 [0m0.375 ms - -[0m
+Server-Client Connected!
+[0mGET /camera/1652278127197.png [32m200 [0m4.640 ms - 1733128[0m
+[0mGET /assets/img/favicon.ico [36m304 [0m0.357 ms - -[0m
+[0mGET /camera/ [32m200 [0m5.105 ms - 47941[0m
+[0mGET /bootstrap/css/bootstrap.min.css [36m304 [0m0.752 ms - -[0m
+[0mGET /assets/css/plugins.css [36m304 [0m3.074 ms - -[0m
+[0mGET /assets/css/scrollspyNav.css [36m304 [0m4.212 ms - -[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [36m304 [0m2.084 ms - -[0m
+[0mGET /plugins/bootstrap-select/bootstrap-select.min.css [36m304 [0m2.147 ms - -[0m
+[0mGET /assets/css/forms/switches.css [36m304 [0m2.194 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.css [36m304 [0m2.206 ms - -[0m
+[0mGET /plugins/table/datatable/dt-global_style.css [36m304 [0m0.498 ms - -[0m
+[0mGET /assets/css/elements/avatar.css [36m304 [0m0.875 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.css [36m304 [0m1.658 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert.css [36m304 [0m2.602 ms - -[0m
+[0mGET /assets/css/components/custom-sweetalert.css [36m304 [0m1.553 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.css [36m304 [0m1.607 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.js [36m304 [0m2.334 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.js [36m304 [0m0.927 ms - -[0m
+[0mGET /assets/css/main.css [36m304 [0m2.965 ms - -[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [36m304 [0m3.184 ms - -[0m
+[0mGET /bootstrap/js/popper.min.js [36m304 [0m2.449 ms - -[0m
+[0mGET /bootstrap/js/bootstrap.min.js [36m304 [0m2.465 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [36m304 [0m2.469 ms - -[0m
+[0mGET /assets/css/structure.css [36m304 [0m2.508 ms - -[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [36m304 [0m0.451 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.min.js [36m304 [0m0.717 ms - -[0m
+[0mGET /assets/js/app.js [36m304 [0m4.717 ms - -[0m
+[0mGET /plugins/highlight/highlight.pack.js [36m304 [0m2.053 ms - -[0m
+[0mGET /assets/js/custom.js [36m304 [0m2.277 ms - -[0m
+[0mGET /assets/js/scrollspyNav.js [36m304 [0m2.514 ms - -[0m
+[0mGET /plugins/bootstrap-select/bootstrap-select.min.js [36m304 [0m2.695 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.js [36m304 [0m2.848 ms - -[0m
+[0mGET /assets/img/logo.png [36m304 [0m2.254 ms - -[0m
+[0mGET /camera/1652278127197.png [36m304 [0m2.327 ms - -[0m
+[0mGET /camera/1652492229210.jpg [36m304 [0m2.436 ms - -[0m
+[0mGET /camera/1652492352598.png [36m304 [0m3.380 ms - -[0m
+[0mGET /camera/ [36m304 [0m7.895 ms - -[0m
+[0mGET /assets/img/favicon.ico [36m304 [0m0.354 ms - -[0m
+Server-Client Connected!
+[0mGET /camera/1652278206588.png [32m200 [0m5.529 ms - 1733128[0m
+[0mGET /assets/img/favicon.ico [36m304 [0m0.357 ms - -[0m
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Server-Client Connected!
+Server-Client Connected!
+Checking AI Server Status
+AI Server Status: DOWN
+Server-Client Connected!
+Server-Client Connected!
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Server-Client Connected!
+Server-Client Connected!
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Server-Client Connected!
+Server-Client Connected!
+Server-Client Connected!
+Server-Client Connected!
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Server-Client Connected!
+Server-Client Connected!
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Server-Client Connected!
+Server-Client Connected!
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+Checking AI Server Status
+AI Server Status: DOWN
+[0mGET /notification [36m304 [0m24.860 ms - -[0m
+[0mGET /bootstrap/css/bootstrap.min.css [36m304 [0m1.807 ms - -[0m
+[0mGET /assets/css/plugins.css [36m304 [0m3.121 ms - -[0m
+[0mGET /assets/css/scrollspyNav.css [36m304 [0m3.054 ms - -[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [36m304 [0m1.563 ms - -[0m
+[0mGET /assets/css/tables/table-basic.css [36m304 [0m1.582 ms - -[0m
+[0mGET /assets/css/elements/avatar.css [36m304 [0m1.943 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.css [36m304 [0m3.070 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert.css [36m304 [0m2.007 ms - -[0m
+[0mGET /assets/css/components/custom-sweetalert.css [36m304 [0m2.032 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.css [36m304 [0m2.072 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.js [36m304 [0m2.660 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.js [36m304 [0m1.021 ms - -[0m
+[0mGET /assets/css/main.css [36m304 [0m7.240 ms - -[0m
+[0mGET /assets/css/structure.css [36m304 [0m2.540 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [36m304 [0m2.522 ms - -[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [36m304 [0m2.337 ms - -[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [36m304 [0m2.795 ms - -[0m
+[0mGET /bootstrap/js/popper.min.js [36m304 [0m1.899 ms - -[0m
+[0mGET /bootstrap/js/bootstrap.min.js [36m304 [0m2.871 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.min.js [36m304 [0m1.982 ms - -[0m
+MIDDLEWARE LOCALS VALUE USERID: 1
+[0mGET /requestProvider.js.map [33m404 [0m11.731 ms - 1212[0m
+[0mGET /assets/js/app.js [36m304 [0m10.778 ms - -[0m
+[0mGET /plugins/highlight/highlight.pack.js [36m304 [0m11.039 ms - -[0m
+[0mGET /assets/js/custom.js [36m304 [0m12.466 ms - -[0m
+[0mGET /assets/js/scrollspyNav.js [36m304 [0m0.698 ms - -[0m
+[0mGET /assets/img/logo.png [36m304 [0m0.997 ms - -[0m
+MIDDLEWARE LOCALS VALUE USERID: 1
+[0mGET /bootstrap/css/bootstrap.min.css.map [33m404 [0m1.242 ms - 1212[0m
+MIDDLEWARE LOCALS VALUE USERID: 1
+[0mGET /plugins/notification/snackbar/snackbar.min.js.map [33m404 [0m1.180 ms - 1212[0m
+[0mGET /assets/img/favicon.ico [36m304 [0m0.537 ms - -[0m
+MIDDLEWARE LOCALS VALUE USERID: 1
+[0mGET /bootstrap/js/bootstrap.min.js.map [33m404 [0m5.195 ms - 1212[0m
+Server-Client Connected!
+[0mGET /assets/img/favicon.ico [36m304 [0m0.459 ms - -[0m
+[0mGET /notification [36m302 [0m0.853 ms - 66[0m
+[0mGET /user/login [32m200 [0m2.772 ms - 4876[0m
+[0mGET /assets/css/plugins.css [32m200 [0m7.799 ms - 334[0m
+[0mGET /bootstrap/css/bootstrap.min.css [32m200 [0m3.620 ms - 160403[0m
+[0mGET /assets/css/authentication/form-2.css [32m200 [0m8.137 ms - 7541[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [32m200 [0m6.286 ms - 12540[0m
+[0mGET /assets/css/forms/switches.css [32m200 [0m6.024 ms - 8218[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [32m200 [0m3.228 ms - 86709[0m
+[0mGET /bootstrap/js/popper.min.js [32m200 [0m1.902 ms - 18994[0m
+[0mGET /bootstrap/js/bootstrap.min.js [32m200 [0m1.924 ms - 60174[0m
+[0mGET /assets/js/authentication/form-2.js [32m200 [0m1.659 ms - 583[0m
+[0mGET /assets/img/logo.png [32m200 [0m1.680 ms - 4604[0m
+[0mGET /assets/css/main.css [32m200 [0m2.698 ms - 57287[0m
+[0mGET /assets/css/structure.css [32m200 [0m2.123 ms - 44466[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [32m200 [0m3.404 ms - 2826[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [32m200 [0m2.749 ms - 1026[0m
+[0mGET /assets/img/favicon.ico [32m200 [0m0.891 ms - 4286[0m
+[0mPOST /user/login [36m302 [0m2.030 ms - 46[0m
+[0mGET / [32m200 [0m11.944 ms - 68478[0m
+[0mGET /bootstrap/css/bootstrap.min.css [36m304 [0m0.689 ms - -[0m
+[0mGET /assets/css/plugins.css [36m304 [0m0.587 ms - -[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [36m304 [0m5.302 ms - -[0m
+[0mGET /assets/css/scrollspyNav.css [32m200 [0m7.387 ms - 1751[0m
+[0mGET /assets/css/tables/table-basic.css [32m200 [0m9.126 ms - 1629[0m
+[0mGET /assets/css/widgets/modules-widgets.css [32m200 [0m3.600 ms - 51286[0m
+[0mGET /plugins/apex/apexcharts.css [32m200 [0m6.498 ms - 11469[0m
+[0mGET /plugins/table/datatable/datatables.css [32m200 [0m3.805 ms - 6852[0m
+[0mGET /plugins/table/datatable/dt-global_style.css [32m200 [0m3.276 ms - 5709[0m
+[0mGET /assets/css/elements/avatar.css [32m200 [0m3.661 ms - 1985[0m
+[0mGET /assets/css/components/custom-modal.css [32m200 [0m1.973 ms - 6857[0m
+[0mGET /assets/css/main.css [36m304 [0m0.850 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [36m304 [0m1.406 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.css [32m200 [0m7.368 ms - 34603[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.css [32m200 [0m2.284 ms - 1283[0m
+[0mGET /assets/css/components/custom-sweetalert.css [32m200 [0m2.841 ms - 281[0m
+[0mGET /plugins/sweetalerts/sweetalert.css [32m200 [0m4.729 ms - 21302[0m
+[0mGET /assets/css/structure.css [36m304 [0m1.062 ms - -[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [36m304 [0m0.797 ms - -[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [36m304 [0m2.946 ms - -[0m
+[0mGET /bootstrap/js/popper.min.js [36m304 [0m1.368 ms - -[0m
+[0mGET /bootstrap/js/bootstrap.min.js [36m304 [0m1.911 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.js [32m200 [0m6.456 ms - 3120[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.js [32m200 [0m5.971 ms - 60636[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.min.js [32m200 [0m3.339 ms - 18291[0m
+[0mGET /assets/js/app.js [32m200 [0m2.763 ms - 13523[0m
+[0mGET /assets/js/custom.js [32m200 [0m2.482 ms - 3618[0m
+[0mGET /plugins/highlight/highlight.pack.js [32m200 [0m3.477 ms - 17197[0m
+[0mGET /plugins/table/datatable/datatables.js [32m200 [0m3.351 ms - 450770[0m
+[0mGET /assets/img/logo.png [36m304 [0m0.692 ms - -[0m
+[0mGET /assets/js/scrollspyNav.js [32m200 [0m5.615 ms - 656[0m
+[0mGET /plugins/apex/apexcharts.min.js [32m200 [0m5.030 ms - 434703[0m
+Server-Client Connected!
+[0mGET /assets/img/favicon.ico [36m304 [0m0.503 ms - -[0m
+[0mGET /office [32m200 [0m6.170 ms - 43174[0m
+[0mGET /bootstrap/css/bootstrap.min.css [36m304 [0m1.417 ms - -[0m
+[0mGET /assets/css/plugins.css [36m304 [0m1.971 ms - -[0m
+[0mGET /assets/css/scrollspyNav.css [36m304 [0m2.903 ms - -[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [36m304 [0m4.027 ms - -[0m
+[0mGET /assets/css/tables/table-basic.css [36m304 [0m4.747 ms - -[0m
+[0mGET /assets/css/elements/avatar.css [36m304 [0m3.073 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.css [36m304 [0m5.727 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert.css [36m304 [0m1.781 ms - -[0m
+[0mGET /assets/css/components/custom-sweetalert.css [36m304 [0m2.775 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.css [36m304 [0m1.200 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.js [36m304 [0m2.205 ms - -[0m
+[0mGET /assets/css/main.css [36m304 [0m2.777 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [36m304 [0m1.843 ms - -[0m
+[0mGET /assets/css/structure.css [36m304 [0m1.871 ms - -[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [36m304 [0m0.800 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.js [36m304 [0m1.010 ms - -[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [36m304 [0m4.994 ms - -[0m
+[0mGET /bootstrap/js/popper.min.js [36m304 [0m1.914 ms - -[0m
+[0mGET /bootstrap/js/bootstrap.min.js [36m304 [0m1.914 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.min.js [36m304 [0m0.826 ms - -[0m
+[0mGET /assets/js/app.js [36m304 [0m0.869 ms - -[0m
+[0mGET /plugins/highlight/highlight.pack.js [36m304 [0m1.067 ms - -[0m
+[0mGET /assets/js/custom.js [36m304 [0m2.209 ms - -[0m
+[0mGET /assets/js/scrollspyNav.js [36m304 [0m1.429 ms - -[0m
+[0mGET /assets/img/logo.png [36m304 [0m1.403 ms - -[0m
+Server-Client Connected!
+[0mGET /assets/img/favicon.ico [36m304 [0m0.423 ms - -[0m
+[0mGET /camera [36m301 [0m0.913 ms - 179[0m
+[0mGET /camera/ [32m200 [0m7.488 ms - 47941[0m
+[0mGET /bootstrap/css/bootstrap.min.css [36m304 [0m0.563 ms - -[0m
+[0mGET /assets/css/plugins.css [36m304 [0m0.568 ms - -[0m
+[0mGET /assets/css/scrollspyNav.css [36m304 [0m0.620 ms - -[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [36m304 [0m3.904 ms - -[0m
+[0mGET /assets/css/forms/switches.css [36m304 [0m2.501 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.css [36m304 [0m1.674 ms - -[0m
+[0mGET /plugins/table/datatable/dt-global_style.css [36m304 [0m1.374 ms - -[0m
+[0mGET /assets/css/elements/avatar.css [36m304 [0m2.421 ms - -[0m
+[0mGET /plugins/bootstrap-select/bootstrap-select.min.css [32m200 [0m6.286 ms - 12620[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.css [36m304 [0m0.388 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert.css [36m304 [0m5.487 ms - -[0m
+[0mGET /assets/css/components/custom-sweetalert.css [36m304 [0m4.026 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.css [36m304 [0m4.035 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.js [36m304 [0m4.051 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.js [36m304 [0m4.081 ms - -[0m
+[0mGET /assets/css/main.css [36m304 [0m1.631 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [36m304 [0m1.218 ms - -[0m
+[0mGET /assets/css/structure.css [36m304 [0m2.129 ms - -[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [36m304 [0m2.897 ms - -[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [36m304 [0m1.670 ms - -[0m
+[0mGET /bootstrap/js/popper.min.js [36m304 [0m1.681 ms - -[0m
+[0mGET /bootstrap/js/bootstrap.min.js [36m304 [0m1.722 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.min.js [36m304 [0m0.947 ms - -[0m
+[0mGET /assets/js/app.js [36m304 [0m0.718 ms - -[0m
+[0mGET /plugins/highlight/highlight.pack.js [36m304 [0m4.421 ms - -[0m
+[0mGET /assets/js/custom.js [36m304 [0m2.100 ms - -[0m
+[0mGET /assets/js/scrollspyNav.js [36m304 [0m2.089 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.js [36m304 [0m1.169 ms - -[0m
+[0mGET /assets/img/logo.png [36m304 [0m0.691 ms - -[0m
+[0mGET /plugins/bootstrap-select/bootstrap-select.min.js [32m200 [0m3.099 ms - 70749[0m
+[0mGET /camera/ [36m304 [0m8.450 ms - -[0m
+[0mGET /camera/1652492229210.jpg [32m200 [0m9.471 ms - 267070[0m
+Server-Client Connected!
+[0mGET /camera/1652278206588.png [32m200 [0m8.380 ms - 1733128[0m
+[0mGET /camera/1652278127197.png [32m200 [0m8.835 ms - 1733128[0m
+[0mGET /camera/1652492352598.png [32m200 [0m8.305 ms - 2026844[0m
+[0mGET /assets/img/favicon.ico [36m304 [0m0.456 ms - -[0m
+[0mGET /notification [32m200 [0m8.037 ms - 58707[0m
+[0mGET /bootstrap/css/bootstrap.min.css [36m304 [0m0.464 ms - -[0m
+[0mGET /assets/css/plugins.css [36m304 [0m3.740 ms - -[0m
+[0mGET /assets/css/scrollspyNav.css [36m304 [0m2.581 ms - -[0m
+[0mGET /assets/css/tables/table-basic.css [36m304 [0m2.452 ms - -[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [36m304 [0m2.592 ms - -[0m
+[0mGET /assets/css/elements/avatar.css [36m304 [0m1.013 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.css [36m304 [0m1.219 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert.css [36m304 [0m5.209 ms - -[0m
+[0mGET /assets/css/components/custom-sweetalert.css [36m304 [0m3.158 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.css [36m304 [0m4.229 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.js [36m304 [0m1.323 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.js [36m304 [0m1.645 ms - -[0m
+[0mGET /assets/css/main.css [36m304 [0m1.262 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [36m304 [0m3.597 ms - -[0m
+[0mGET /assets/css/structure.css [36m304 [0m3.675 ms - -[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [36m304 [0m3.677 ms - -[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [36m304 [0m3.744 ms - -[0m
+[0mGET /bootstrap/js/popper.min.js [36m304 [0m4.281 ms - -[0m
+[0mGET /bootstrap/js/bootstrap.min.js [36m304 [0m0.859 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.min.js [36m304 [0m2.638 ms - -[0m
+[0mGET /assets/js/app.js [36m304 [0m1.773 ms - -[0m
+[0mGET /plugins/highlight/highlight.pack.js [36m304 [0m1.863 ms - -[0m
+[0mGET /assets/js/custom.js [36m304 [0m2.871 ms - -[0m
+[0mGET /assets/js/scrollspyNav.js [36m304 [0m1.059 ms - -[0m
+[0mGET /assets/img/logo.png [36m304 [0m1.012 ms - -[0m
+Server-Client Connected!
+[0mGET /assets/img/favicon.ico [36m304 [0m0.682 ms - -[0m
+[0mGET /camera/ [36m304 [0m5.222 ms - -[0m
+[0mGET /bootstrap/css/bootstrap.min.css [36m304 [0m0.509 ms - -[0m
+[0mGET /assets/css/plugins.css [36m304 [0m0.462 ms - -[0m
+[0mGET /assets/css/scrollspyNav.css [36m304 [0m2.318 ms - -[0m
+[0mGET /assets/css/forms/theme-checkbox-radio.css [36m304 [0m4.467 ms - -[0m
+[0mGET /plugins/bootstrap-select/bootstrap-select.min.css [36m304 [0m2.651 ms - -[0m
+[0mGET /assets/css/forms/switches.css [36m304 [0m2.622 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.css [36m304 [0m2.540 ms - -[0m
+[0mGET /plugins/table/datatable/dt-global_style.css [36m304 [0m3.126 ms - -[0m
+[0mGET /assets/css/elements/avatar.css [36m304 [0m1.401 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.css [36m304 [0m0.347 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert.css [36m304 [0m1.803 ms - -[0m
+[0mGET /assets/css/components/custom-sweetalert.css [36m304 [0m2.937 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.css [36m304 [0m1.727 ms - -[0m
+[0mGET /plugins/notification/snackbar/snackbar.min.js [36m304 [0m1.789 ms - -[0m
+[0mGET /plugins/sweetalerts/sweetalert2.min.js [36m304 [0m1.815 ms - -[0m
+[0mGET /assets/css/main.css [36m304 [0m2.630 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.css [36m304 [0m0.978 ms - -[0m
+[0mGET /assets/css/structure.css [36m304 [0m1.444 ms - -[0m
+[0mGET /plugins/highlight/styles/monokai-sublime.css [36m304 [0m0.500 ms - -[0m
+[0mGET /assets/js/libs/jquery-3.1.1.min.js [36m304 [0m0.348 ms - -[0m
+[0mGET /bootstrap/js/popper.min.js [36m304 [0m4.118 ms - -[0m
+[0mGET /bootstrap/js/bootstrap.min.js [36m304 [0m2.912 ms - -[0m
+[0mGET /plugins/perfect-scrollbar/perfect-scrollbar.min.js [36m304 [0m2.772 ms - -[0m
+[0mGET /assets/js/app.js [36m304 [0m1.941 ms - -[0m
+[0mGET /plugins/highlight/highlight.pack.js [36m304 [0m2.046 ms - -[0m
+[0mGET /assets/js/custom.js [36m304 [0m2.078 ms - -[0m
+[0mGET /assets/js/scrollspyNav.js [36m304 [0m4.298 ms - -[0m
+[0mGET /plugins/bootstrap-select/bootstrap-select.min.js [36m304 [0m2.846 ms - -[0m
+[0mGET /plugins/table/datatable/datatables.js [36m304 [0m2.941 ms - -[0m
+[0mGET /assets/img/logo.png [36m304 [0m3.002 ms - -[0m
+[0mGET /camera/1652278127197.png [36m304 [0m2.909 ms - -[0m
+[0mGET /camera/ [36m304 [0m7.214 ms - -[0m
+[0mGET /camera/1652278206588.png [36m304 [0m0.837 ms - -[0m
+[0mGET /camera/1652492229210.jpg [36m304 [0m0.883 ms - -[0m
+[0mGET /camera/1652492352598.png [36m304 [0m1.097 ms - -[0m
+Server-Client Connected!
+[0mGET /assets/img/favicon.ico [36m304 [0m0.355 ms - -[0m
+[0mGET /camera/getone [32m200 [0m1.233 ms - 491[0m
+Checking AI Server Status
+AI Server Status: DOWN
