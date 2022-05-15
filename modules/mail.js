@@ -3,14 +3,14 @@ const transporter = mail.createTransport({
     service: 'gmail',
     //proxy: 'http://127.0.0.1:10809', //For testing in countries which blocked gmail, via V2RAY local proxy
     auth: {
-        user: 'nodeexecutor@gmail.com',
-        pass: 'sQaEEt4tkpmknkq'
+        user: 'safesynergys365@gmail.com',
+        pass: 'SafeSynergyadmin'
     }
 });
 
 exports.sendMail = function ($mailAddress, $mailBody) {
     let mailOptions = {
-        from: 'nodeexecutor@gmail.com',
+        from: 'safesynergys365@gmail.com',
         to: $mailAddress,
         subject: 'Alert Notification',
         text: $mailBody

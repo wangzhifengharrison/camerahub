@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../modules/db');
 const multer = require('multer');
+// const mail = require('../modules/mail');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './public/camera')
@@ -159,6 +160,7 @@ router.get('/list', function (req, res, next) {
 });
 
 router.get('/getone', function (req, res, next) {
+    // mail.sendMail('1124236437@qq.com', 'test one');
     let query = "SELECT * FROM camera WHERE cameraStatus = 1";
     db.query(query, (err, result) => {
         res.send(JSON.stringify(result));

@@ -1,8 +1,8 @@
 const mysql = require('mysql2');
 const connection = mysql.createPool({
-    host: '127.0.0.1',
+    host: '3.25.122.121',
     user: 'root',
-    password: '12345678',
+    password: 'wang0.25',
     database: 'synergy'
 });
 
